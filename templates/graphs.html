@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<form class="form-models" method="post" action='/datasets/{{dataset}}/graphprocess/'>
+  <br>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Select Graphs</li>
+    </ol>
+  </nav>
+<br><br>
+
+<div class="row">
+  <div class="col-sm-4">
+    <h5>Histograms:</h5>
+	  <label for="histogramselection">Select variables</label>
+	   <select multiple name="histogram" class="form-control">
+		     <option value=""></option>
+            {% for mod in columns %}
+			         <option value="{{mod}}">{{mod}}</option>
+		        {% endfor %}
+	   </select>
+	</div>
+  <div class="col-sm-4">
+    <h5>BoxPlot:</h5>
+	  <label for="boxplotselect">Variable 1:</label>
+	     <select name="boxplotcat" class="form-control"> Variable 1:
+		       <option value=""></option>
+              {% for mod in columns %}
+			           <option value="{{mod}}">{{mod}}</option>
+		          {% endfor %}
+	     </select><br>
+    <label for="variable2">Varable 2:</label>
+	     <select name="boxplotnum" class="form-control">
+		       <option value=""></option>
+              {% for mod in columns %}
+			           <option value="{{mod}}">{{mod}}</option>
+		          {% endfor %}
+	      </select>
+	</div>
+  <div class="col-sm-4">
+    <h5>Correlation Plots:</h5>
+	  <label for="corelationplot">Select variables:</label>
+      <select multiple name="corr" class="form-control">
+		      <option value=""></option>
+              {% for mod in columns %}
+			           <option value="{{mod}}">{{mod}}</option>
+		          {% endfor %}
+	     </select><br>
+    <label for="Categoricalvariable">	Categorical Variable (Variable in data to map plot aspects to different colors) OPTIONAL:</label>
+    <br>
+      <select name = "corrcat" class="form-control">
+		      <option value=""></option>
+              {% for mod in columns %}
+			           <option value="{{mod}}">{{mod}}</option>
+		          {% endfor %}
+      </select>
+  </div>
+</div>
+<br>
+  <button class="btn btn-lg btn-dark btn-block" type="submit">Show Graphs</button>
+</form>
+</div>
+{% endblock %}

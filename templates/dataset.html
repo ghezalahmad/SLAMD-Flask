@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<br>
+<div class="container-fluid">
+<h2 align=''>Sample of data:</h2>
+	{{head | safe}}
+<h2 align=''>Variable Description Summary:</h2>
+	{{description | safe}}
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+<form class="form-group" method="post" action='/datasets/{{dataset}}/preprocessed_dataset/'>
+  <h2 class="form-features-heading" align='center'>Choose preprocessing options</h2>
+  <p align='center'>* If you want manual selection, leave blank the "Number of features" field</p>
+  <p align='center'>* Extra preprocessing (normalization, dummy variables...) in model and predict steps.</p></br>
+
+
+
+
+  <form>
+    <div class="form-row">
+      <div class="col-7">
+        <label for="automaticfeature">(Automatic) Number of features (Chi-squared):</label>
+
+        <input type="text" class="form-control" placeholder="(Automatic) Number of features (Chi-squared)" name="nfeatures">
+      </div>
+      <div class="col">
+        <label for="targetvariable">Target Variable:</label>
+        <select  class="form-control" name="response">
+          {% for col in columns %}
+          <option value="{{col}}">{{col}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <br>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="staticEmail">New Dataset:</label>
+        <input type="text" class="form-control" placeholder="Name new dataset: (extention of {{dataset}})" name="newdataset" id="">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="varibaleselection" >Variable Selection:</label>
+        <select multiple class="form-control" name="manualfeatures">
+          {% for col in columns %}
+          <option value="{{col}}">{{col}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nullvalue" >Drop rows with null values:</label>
+              <select  class="form-control" name="dropna">
+                <option value="all">Null values in all columns</option>
+                <option value="any">Null values in any columns</option>
+                <option value="no">Never</option>
+              </select>
+            </div>
+
+
+
+      <div class="form-group col-md-6">
+        <label for="uniqevalues" >Drop rows with unique values:</label>
+        <select  class="form-control" name="dropsame">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+
+        </select>
+      </div>
+    </div>
+
+    <br><br>
+
+    <button class="btn btn-lg btn-dark btn-block" type="submit">Create New Dataset</button>
+  </form>
+
+
+
+
+
+{% endblock %}

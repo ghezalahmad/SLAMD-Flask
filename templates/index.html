@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+<br>
+  <div style="display: flex; ">
+    <img src='/static/logo.png' width=300 height=150>
+    <hr>
+  </div><br>
+
+<!-- File upload  -->
+  <div class="input-group">
+
+      <form action = "http://127.0.0.1:5000/" method = "POST"
+               enctype = "multipart/form-data" align=''>
+      <input type="file" class="custom-file-input" id="inputGroupFile04" name="file">
+      <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+      <br>
+       <div class="input-group-append">
+      <input class="btn btn-outline-secondary" type="submit" value="Upload">
+        </div>
+      </form>
+  </div>
+
+
+<!-- display files into tables  -->
+<table class="table table-sm">
+  <thead class="">
+    <tr>
+      <th scope="col">Existing datasets</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for ds in originalds %}
+        <tr>
+      <td class="align-baseline"><a href='datasets/{{ds}}'>{{ds}}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead class="">
+      <tr>
+        <th scope="col">Preprocessed datasets</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ds in featuresds %}
+  <tr>
+      <td class="align-baseline"><a href='datasets/{{ds}}'>{{ds}}</a></td>
+
+      {% endfor %}
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<!--
+
+            <form action = "http://127.0.0.1:5000/" method = "POST"
+                     enctype = "multipart/form-data">
+                     <input type = "file" name="file" class="form-control-file">
+                     <div class="input-group-append">
+                     <input type = "submit" class="btn btn-success mt-2" value="Upload">
+                     </div>
+            </form>
+
+
+
+
+<h2 align='center'>Existing datasets</h2>
+{% for ds in originalds %}
+<h3 align='center'><a href='datasets/{{ds}}'>{{ds}}</a></h3>
+{% endfor %}
+<h2 align='center'>Datasets after preprocessing:</h2>
+{% for ds in featuresds %}
+<h3 align='center'><a href='datasets/{{ds}}'>{{ds}}</a></h3>
+{% endfor %}
+</br>
+<div align='center'>
+<form action = "http://127.0.0.1:5000/" method = "POST"
+         enctype = "multipart/form-data" align='center'>
+         <input type = "file" name = "file" align='center'>
+         <input type = "submit" align='center' value="Upload">
+</form></div>
+</div>
+
+-->
+
+
+
+
+{% endblock %}

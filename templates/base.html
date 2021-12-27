@@ -1,44 +1,74 @@
-
-<!DOCTYPE html>
+<html>
 <head>
-  <!-- Favicon -->
-  <!--link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}"-->
-
-  <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script type = "text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script type = "text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script type = "text/javascript"  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Datatable -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-  <script type = "text/javascript"  src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-  <script type = "text/javascript"  src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-  <script type = "text/javascript"  src="https://cdn.datatables.net/plug-ins/1.10.15/dataRender/datetime.js"></script>
 </head>
 <body>
+   
+<!--
+{% if dataset %}
+Material Science - Dataset: {{ dataset }}
+{% else %}
+Material Science
+{% endif %}
 
-  <br/>
-  <div class="">
+ -->
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    {% if dataset %}
+     <!-- <h1 align='center'>Dataset: {{ dataset }}</h1> -->
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/datasets/{{dataset}}">Summary<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datasets/{{dataset}}/preprocessing">Preprocessing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datasets/{{dataset}}/graphs">Visualize</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datasets/{{dataset}}/models">Models</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/datasets/{{dataset}}/predict">Predictions</a>
+            </li>
+        </ul>
+      </div>
+      {% endif %}
+    </nav>
 
-    {% block content %}
-
-    {% endblock %}
-
-  </div>
 
 
 
 
+{% block content %}
 
+ 
+
+
+
+
+
+
+
+
+{% endblock %}
+    
 </body>
-<script type="text/javascript">
-$('#proxies').DataTable();
-</script>
 
 </html>
+
+
+
+
+

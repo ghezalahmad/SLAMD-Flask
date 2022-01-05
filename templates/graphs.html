@@ -1,14 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-<form class="form-models" method="post" action='/datasets/{{dataset}}/graphprocess/'>
-  <br>
+
+
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
   <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Select Graphs</li>
-    </ol>
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/preprocessing"">Preprocessing</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Overview</li>
+
+      </ol>
   </nav>
+
 <br><br>
+
+<form class="form-models" method="post" action='/datasets/{{dataset}}/graphprocess/'>
+
+
+<!-- histogram plot -->
 
 <div class="row">
   <div class="col-sm-4">
@@ -21,6 +30,34 @@
 		        {% endfor %}
 	   </select>
 	</div>
+
+<!-- Scatter plot -->
+
+  <div class="col-sm">
+    <h5>Scatter:</h5>
+	  <label for="scatterselection">Select variables</label>
+	   <select multiple name="scatter1" class="form-control">
+		     <option value=""></option>
+            {% for mod in columns %}
+			         <option value="{{mod}}">{{mod}}</option>
+		        {% endfor %}
+	   </select>
+
+     <label for="scatterselection2">Select variables</label>
+ 	   <select multiple name="scatter2" class="form-control">
+ 		     <option value=""></option>
+             {% for mod in columns %}
+ 			         <option value="{{mod}}">{{mod}}</option>
+ 		        {% endfor %}
+ 	   </select>
+	</div>
+  <br>
+
+
+
+
+<!-- scatter plot -->
+
   <div class="col-sm-4">
     <h5>BoxPlot:</h5>
 	  <label for="boxplotselect">Variable 1:</label>
@@ -38,6 +75,7 @@
 		          {% endfor %}
 	      </select>
 	</div>
+<!-- Correlation plot -->
   <div class="col-sm-4">
     <h5>Correlation Plots:</h5>
 	  <label for="corelationplot">Select variables:</label>
@@ -46,7 +84,8 @@
               {% for mod in columns %}
 			           <option value="{{mod}}">{{mod}}</option>
 		          {% endfor %}
-	     </select><br>
+	     </select>
+    <br>
     <label for="Categoricalvariable">	Categorical Variable (Variable in data to map plot aspects to different colors) OPTIONAL:</label>
     <br>
       <select name = "corrcat" class="form-control">
@@ -57,8 +96,11 @@
       </select>
   </div>
 </div>
+
 <br>
-  <button class="btn btn-lg btn-dark btn-block" type="submit">Show Graphs</button>
+  <button class="btn  btn-warning btn-block" type="submit">Show Graphs</button>
 </form>
-</div>
+
+
+</main>
 {% endblock %}

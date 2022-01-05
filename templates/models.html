@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/models">Models</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Overview</li>
+
+      </ol>
+  </nav>
+
+<br><br>
+
+
+<form class="form-models" method="post" action='/datasets/{{dataset}}/modelprocess/'>
+
+
+<!-- Model part -->
+<div class="row">
+  <div class="col-sm">
+    <h6>Algorithm</h6>
+    <select name="model" class="form-control">
+		    <optgroup label="Classification">
+          {% for mod in clfmodels %}
+			  <option value="{{mod}}.Classification">{{mod}}</option>
+		      {% endfor %}
+		    </optgroup>
+		    <optgroup label="Regression">
+		        {% for mod in predmodels %}
+			         <option value="{{mod}}.Regression">{{mod}}</option>
+		        {% endfor %}
+		    </optgroup>
+
+    </select>
+  </div>
+
+<!-- cross validation -->
+  <div class="col-sm">
+    <h6>K-Fold Cross-Validation:</h6>
+    <select name="kfold" class="form-control">
+        {% for i in (3,6,10) %}
+			     <option value="{{i}}">{{i}}</option>
+		    {% endfor %}
+    </select>
+  </div>
+
+  <!-- standard scaling -->
+  <div class="col-sm">
+    <h6>Standard Scaling:</h6>
+    <select name="scaling" class="form-control">
+        {% for i in ('Yes', 'No') %}
+			     <option value="{{i}}">{{i}}</option>
+		    {% endfor %}
+    </select>
+  </div>
+</div>
+<br>
+<br>
+
+  <!-- selecting input and target data -->
+<div class="row">
+  <div class="col-sm-8">
+   <h6>Select the variables that the model should use (leave blank for all):</h6>
+     <select multiple name="variables" class="form-control">
+		     <option value=""></option>
+            {% for col in columns %}
+			         <option value="{{col}}">{{col}}</option>
+		        {% endfor %}
+    </select>
+  </div>
+
+  <div class="col-sm-4">
+    <h6>Target Variable:</h6>
+      <select name="response" class="form-control">
+          {% for col in columns %}
+            <option value="{{col}}">{{col}}</option>
+          {% endfor %}
+      </select>
+  </div>
+</div>
+<br><br>
+  <button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
+</form>
+</main>
+{% endblock %}

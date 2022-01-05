@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+import plotly.express as px
 
 #Plot ROC curves
 def plot_ROC(X, y, classifier, cv):
@@ -120,3 +121,8 @@ def plot_boxplot(ds, cat, num):
     import base64
     figdata_png = base64.b64encode(figfile.getvalue())
     return figdata_png
+
+def plot_scatter(ds, x, y):
+    fig = px.scatter(x, y, marginal_x='histogram', marginal_y='rug')
+    fig = fig.show()
+    return fig

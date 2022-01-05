@@ -2,11 +2,19 @@
 {% block content %}
 
 
-<div class="container">
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/preprocessing"">Preprocessing</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Overview</li>
+
+      </ol>
+  </nav>
 <form class="form-group" method="post" action='/datasets/{{dataset}}/preprocessed_dataset/'>
-  <h2 class="form-features-heading" align='center'>Choose preprocessing options</h2>
+  <h5 class="form-features-heading" align='center'>Choose preprocessing options</h5>
   <p align='center'>* If you want manual selection, leave blank the "Number of features" field</p>
-  <p align='center'>* Extra preprocessing (normalization, dummy variables...) in model and predict steps.</p></br>
+  <p align='center'>* Extra preprocessing (normalization, dummy variables...) in model and predict steps.</p><br>
 
 
 
@@ -42,7 +50,7 @@
           {% endfor %}
         </select>
       </div>
-
+      </div>
 
 
       <div class="form-row">
@@ -69,11 +77,11 @@
 
     <br><br>
 
-    <button class="btn btn-lg btn-dark btn-block" type="submit">Create New Dataset</button>
+    <button class="btn btn-warning btn-block" type="submit">Create New Dataset</button>
   </form>
 
 
-
+</main>
 
 
 {% endblock %}

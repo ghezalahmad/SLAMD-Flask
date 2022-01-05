@@ -9,7 +9,7 @@ from io import BytesIO
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
-
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 bootstrap = Bootstrap(app)
 
 def datasetList():
@@ -67,11 +67,68 @@ def dataset(description = None, head = None, dataset = None):
         head = df.head(5)
     except: pass
     return render_template('dataset.html',
-                           description = description.to_html(classes='table table-striped table-hover'),
+                           description = description.to_html(classes='table table-striped table-hover card-body'),
                            head = head.to_html(index=False, classes='table table-striped table-hover'),
                            dataset = dataset)
 
+@app.route('/datasets/<dataset>/models')
+def models(dataset = dataset):
+    columns = loadColumns(dataset)
+    clfmodels = algorithms.classificationModels()
+    predmodels = algorithms.regressionModels()
+    return render_template('models.html', dataset = dataset,
+                           clfmodels = clfmodels,
+                           predmodels = predmodels,
+                           columns = columns)
 
+@app.route('/datasets/<dataset>/modelprocess/', methods=['POST'])
+def model_process(dataset = dataset):
+    algscore = request.form.get('model')
+    res = request.form.get('response')
+    kfold = request.form.get('kfold')
+    alg, score = algscore.split('.')
+    scaling = request.form.get('scaling')
+    variables = request.form.getlist('variables')
+    from sklearn.model_selection import cross_validate
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.pipeline import Pipeline
+    df = loadDataset(dataset)
+    y = df[str(res)]
+
+    if variables != [] and '' not in variables: df = df[list(set(variables + [res]))]
+    X = df.drop(str(res), axis=1)
+    try: X = pd.get_dummies(X)
+    except: pass
+
+    predictors = X.columns
+    if len(predictors)>10: pred = str(len(predictors))
+    else: pred = ', '.join(predictors)
+
+    if score == 'Classification':
+        from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, roc_curve, auc
+        scoring = ['precision', 'recall', 'f1', 'accuracy', 'roc_auc']
+        if scaling == 'Yes':
+            clf = algorithms.classificationModels()[alg]
+            mod = Pipeline([('scaler', StandardScaler()), ('clf', clf)])
+        else:
+            mod = algorithms.classificationModels()[alg]
+        fig = plotfun.plot_ROC(X.values, y, mod, int(kfold))
+
+    elif score == 'Regression':
+        from sklearn.metrics import explained_variance_score, r2_score, mean_squared_error
+        scoring = ['explained_variance', 'r2', 'mean_squared_error']
+        if scaling == 'Yes':
+            pr = algorithms.regressionModels()[alg]
+            mod = Pipeline([('scaler', StandardScaler()), ('clf', pr)])
+        else: mod = algorithms.regressionModels()[alg]
+        fig = plotfun.plot_predVSreal(X, y, mod, int(kfold))
+
+    scores = cross_validate(mod, X, y, cv=int(kfold), scoring=scoring)
+    for s in scores:
+        scores[s] = str(round(np.mean(scores[s]),3))
+    return render_template('scores.html', scores = scores, dataset = dataset, alg=alg,
+                           res = res, kfold = kfold, score = score,
+                           predictors = pred, response = str(fig, 'utf-8'))
 
 @app.route('/datasets/<dataset>/preprocessing')
 def preprocessing(dataset = dataset):
@@ -136,10 +193,12 @@ def graph_process(dataset = dataset):
     boxplotnum = request.form.get('boxplotnum')
     corr = request.form.getlist('corr')
     corrcat = request.form.get('corrcat')
+    scatter = request.form.getlist('scatter1')
+    scat = request.form.getlist('scatter2')
 
     if corrcat != '': corr += [corrcat]
     ds = loadDataset(dataset)
-    import plotfunctions as plotfun
+    import ploting as plotfun
     figs = {}
     if histogram != [''] and histogram != []:
         figs['Histograms'] = str(plotfun.plot_histsmooth(ds, histogram), 'utf-8')
@@ -147,8 +206,111 @@ def graph_process(dataset = dataset):
         figs['Correlations'] = str(plotfun.plot_correlations(ds, corr, corrcat), 'utf-8')
     if boxplotcat != '' and boxplotnum != '':
         figs['Box Plot'] = str(plotfun.plot_boxplot(ds, boxplotcat, boxplotnum), 'utf-8')
+
+    if scatter != [''] and scat !=[]:
+        figs['scatter'] = (plotfun.plot_scatter(ds, scatter, scat), 'utf-8')
     if figs == {}: return redirect('/datasets/' + dataset + '/graphs')
+
+
     return render_template('drawgraphs.html', figs = figs, dataset = dataset)
 
+@app.route('/datasets/<dataset>/predict')
+def predict(dataset = dataset):
+    columns = loadColumns(dataset)
+    clfmodels = algorithms.classificationModels()
+    predmodels = algorithms.regressionModels()
+    return render_template('predict.html', dataset = dataset,
+                           clfmodels = clfmodels,
+                           predmodels = predmodels,
+                           columns = columns)
+
+@app.route('/datasets/<dataset>/prediction/', methods=['POST'])
+def predict_process(dataset = dataset):
+    algscore = request.form.get('model')
+    res = request.form.get('response')
+    alg, score = algscore.split('.')
+    scaling = request.form.get('scaling')
+    df = loadDataset(dataset)
+    columns = df.columns
+    values = {}
+    counter = 0
+    for col in columns:
+        values[col] = request.form.get(col)
+        if values[col] != '' and col != res: counter +=1
+
+    if counter == 0: return redirect('/datasets/' + dataset + '/predict')
+
+    predictors = {}
+    for v in values:
+        if values[v] != '':
+            try: predictors[v] = [float(values[v])]
+            except: predictors[v] = [values[v]]
+
+    from sklearn.preprocessing import StandardScaler
+    X = df[list(predictors.keys())]
+    Xpred = predictors
+    #return str(Xpred)
+    Xpred = pd.DataFrame(data=Xpred)
+    X = pd.concat([X,Xpred])
+    X = pd.get_dummies(X)
+    Xpred = X.iloc[[-1]]
+    X = X[:-1]
+    if scaling == 'Yes':
+        scaler = StandardScaler()
+        X = pd.DataFrame(scaler.fit_transform(X), columns = X.columns)
+        Xpred = pd.DataFrame(scaler.transform(Xpred), columns = X.columns)
+    try:
+        X = X.drop(str(res), axis=1)
+        Xpred = Xpred.drop(str(res), axis=1)
+    except: pass
+    #Xpred.reset_index(drop=True, inplace=True)
+    #X.reset_index(drop=True, inplace=True)
+    y = df[str(res)]
+    if score == 'Classification':
+            mod = algorithms.classificationModels()[alg]
+    elif score == 'Regression':
+        mod = algorithms.regressionModels()[alg]
+    model = mod.fit(X, y)
+    #return pd.DataFrame(Xpred).to_html()
+    predictions = {}
+    predictions['Prediction'] = model.predict(Xpred)[0]
+    predictors.pop(res, None)
+    for p in predictors:
+        if str(predictors[p][0]).isdigit() is True: predictors[p] = int(predictors[p][0])
+        else:
+            try: predictors[p] = round(predictors[p][0],2)
+            except: predictors[p] = predictors[p][0]
+    for p in predictions:
+        if str(predictions[p]).isdigit() is True: predictions[p] = int(predictions[p])
+        else:
+            try: predictions[p] = round(predictions[p],2)
+            except: continue
+    if len(predictors) > 15: predictors = {'Number of predictors': len(predictors)}
+    #return str(predictors) + res + str(predictions) + alg + score
+    if score == 'Classification':
+        classes = model.classes_
+        pred_proba = model.predict_proba(Xpred)
+        for i in range(len(classes)):
+            predictions['Prob. ' + str(classes[i])] = round(pred_proba[0][i],3)
+    return render_template('prediction.html', predictions = predictions, response = res,
+                           predictors = predictors, algorithm = alg, score = score,
+                           dataset = dataset)
+
+
+@app.route('/datasets/<dataset>/tutorial')
+def tutorial():
+    return render_template('tutorial.html')
+
+
+@app.errorhandler(500)
+def internal_error(e):
+    return render_template('error500.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error404.html')
+
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.jinja_env.auto_reload=True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.run(debug=True)

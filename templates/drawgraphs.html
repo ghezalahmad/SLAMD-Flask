@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/graphs">Visualize</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Overview</li>
+
+      </ol>
+  </nav>
+
+<br><br>
+
+    {% for key, value in figs.items() %}
+		<h2 align='center'>{{key}}</h2>
+		<div style="display: flex; justify-content: center;">
+        <img src="data:image/png;base64, {{value}}" align='center'>
+		</div>
+	{% endfor %}
+</main>
+{% endblock %}

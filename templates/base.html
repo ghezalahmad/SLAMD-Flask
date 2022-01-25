@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 
+      <!-- jquery for range -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -52,7 +60,25 @@
         .sidebar .nav-link.active {
             color: #0d6efd;
         }
+
+        #custom-handle {
+           width: 3em;
+           height: 1.6em;
+           top: 50%;
+           margin-top: -.8em;
+           text-align: center;
+           line-height: 1.6em;
+         }
+
+         #sigma {
+           display:none;
+         }
+
     </style>
+
+
+
+
 </head>
 <body>
 
@@ -129,6 +155,12 @@
                           </a>
                         </li>
                         <li class="nav-item">
+                          <a class="nav-link" href="/datasets/{{dataset}}/sequential">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                            <span class="ml-2">Sequential</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
                           <a class="nav-link" href="/datasets/{{dataset}}/predict">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                             <span class="ml-2">Predictions</span>
@@ -177,6 +209,39 @@
                     showArea: true
                 });
             </script>
+            <script>
+                $("#strategy").change(function(){
+                  var abc = $('#strategy').val();
+
+
+
+                  if (abc == '1'){
+                  //alert('hello');
+                  //$document.getElementByID('first').show();
+                    $('#sigma').show();
+                    $('#prediction').show();
+                  } else if (abc == '2'){
+                    $('#prediction').hide();
+                    $('#sigma').show();
+                  } else if (abc == '3'){
+                    $('#prediction').hide();
+                    $('#sigma').show();
+                  } else if (abc == '4'){
+                    $('#sigma').hide();
+                    $('#prediction').show();
+                  } else if (abc == '5'){
+                    $('#sigma').show();
+                    $('#prediction').show();
+                  } else {
+                    alert('select a option');
+                  }
+
+                });
+            </script>
+
+
+
+
 
 
 

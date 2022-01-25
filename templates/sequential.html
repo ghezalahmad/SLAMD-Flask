@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/preprocessing">sequential</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Overview</li>
+
+      </ol>
+  </nav>
+<form class="form-group" method="post" action='/datasets/{{dataset}}/sequentialprocess'>
+  <h3 class="form-features-heading" align=''>Settings</h3>
+<br>
+
+    <!-- selecting features, fixed_target and target data -->
+<!-- ------------------------------------------------------------------------------- -->
+  <div class="row">
+    <div class="col-sm-5">
+      <h6>Features:</h6>
+       <select multiple name="features" class="form-control" required>
+  		     <option value=""></option>
+              {% for col in columns %}
+  			         <option value="{{col}}">{{col}}</option>
+  		        {% endfor %}
+      </select>
+    </div>
+
+    <div class="col-sm-4">
+      <h6>Target Variable:</h6>
+        <select multiple name="targets" class="form-control" required>
+            {% for col in columns %}
+              <option value="{{col}}">{{col}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h6>Fixed Target:</h6>
+        <select name="fixedtargets" class="form-control is-valid" required>
+            {% for col in columns %}
+              <option value="{{col}}">{{col}}</option>
+            {% endfor %}
+        </select>
+    </div>
+  </div>
+  <br>
+<!-- ------------------------------------------------------------------------------- -->
+<!-- selecting Initial sample size and model_selection -->
+  <div class="row">
+    <div class="col-sm-5">
+      <label for="customRange2" class="form-label">Initial Samples Size:</label>
+      <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange2" onInput="$('#rangeval').html($(this).val())">
+      <span id="rangeval"><!-- Default value --></span>
+    </div>
+
+    <div class="col-sm-4">
+      <h7>Model:</h7>
+        <select name="models" class="form-control is-valid" >
+              <option hidden>Select Model</option>
+              <option value="Gaussian Process Regression (GPR)">Gaussian Process Regression (GPR)</option>
+              <option value="lolo Random Forrest (RF)">lolo Random Forrest (RF)</option>
+              <option value="Decision Trees (DT)">Decision Trees (DT)</option>
+              <option value="Random Forrest (RFscikit)">Random Forrest (RFscikit)</option>
+        </select>
+    </div>
+
+    <div class="col-sm-3" id="prediction" hidden="hidden">
+      <label for="customRange4" class="form-label">Prediction quantile:</label>
+      <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange4" onInput="$('#rangeval4').html($(this).val())">
+      <span id="rangeval4"><!-- Default value --></span>
+    </div>
+  </div>
+<!-- ------------------------------------------------------------------------------- -->
+    <br>
+    <div class="row">
+      <div class="col-sm-5">
+        <label for="customRange3" class="form-label"># of SL runs:</label>
+        <input name='iterate' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange3" onInput="$('#rangeval2').html($(this).val())">
+         <span id="rangeval2"><!-- Default value --></span>
+      </div>
+
+    <div class="col-sm-4">
+      <h7>Strategy:</h7>
+        <select name="strategy" class="form-control" id="strategy">
+              <option hidden>Select Strategy</option>
+              <option value="1">MEI (exploit)</option>
+              <option value="2">MU (explore)</option>
+              <option value="3">MLI (exploit & explore)</option>
+              <option value="4">MEID (exploit)</option>
+              <option value="5">MLID (explore & exploit)</option>
+        </select>
+    </div>
+
+    <div class="col-sm-3" id="sigma" hidden="hidden">
+      <label for="customRange5" class="form-label">sigma factor:</label>
+      <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8"  step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
+      <span id="rangeval5"><!-- Default value --></span>
+    </div>
+  </div>
+  <!-- ------------------------------------------------------------------------------- -->
+  <br><br>
+    <button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
+  </form>
+
+</main>
+
+
+
+
+
+{% endblock %}

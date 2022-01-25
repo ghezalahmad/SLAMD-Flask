@@ -6,7 +6,7 @@
 
   <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/preprocessing"">Preprocessing</a></li>
+          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/preprocessing">Preprocessing</a></li>
           <li class="breadcrumb-item active" aria-current="page">Overview</li>
 
       </ol>
@@ -21,7 +21,7 @@
 
 <div class="row">
   <div class="col-sm-4">
-    <h5>Histograms:</h5>
+    <h5>Histogram:</h5>
 	  <label for="histogramselection">Select variables</label>
 	   <select multiple name="histogram" class="form-control">
 		     <option value=""></option>
@@ -35,16 +35,16 @@
 
   <div class="col-sm">
     <h5>Scatter:</h5>
-	  <label for="scatterselection">Select variables</label>
-	   <select multiple name="scatter1" class="form-control">
+	  <label for="y_selection">Select variable</label>
+	   <select name="y" class="form-control">
 		     <option value=""></option>
             {% for mod in columns %}
 			         <option value="{{mod}}">{{mod}}</option>
 		        {% endfor %}
 	   </select>
 
-     <label for="scatterselection2">Select variables</label>
- 	   <select multiple name="scatter2" class="form-control">
+     <label for="x_selection">Select variable</label>
+ 	   <select name="x" class="form-control">
  		     <option value=""></option>
              {% for mod in columns %}
  			         <option value="{{mod}}">{{mod}}</option>
@@ -54,10 +54,9 @@
   <br>
 
 
-
+<!-- line plot -->
 
 <!-- scatter plot -->
-
   <div class="col-sm-4">
     <h5>BoxPlot:</h5>
 	  <label for="boxplotselect">Variable 1:</label>

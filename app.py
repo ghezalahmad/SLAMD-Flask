@@ -7,6 +7,7 @@ import ploting as plotfun
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from io import BytesIO
 from flask_bootstrap import Bootstrap
+from slamd import *
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -26,7 +27,7 @@ def loadColumns(dataset):
         if extension == 'txt':
             df = pd.read_table(os.path.join(folders[datasets.index(dataset)], dataset + '.txt'), nrows=0)
         elif extension == 'csv':
-            df = pd.read_csv(os.path.join(folders[datasets.index(dataset)], dataset + '.csv'), nrows=0)
+            df = pd.read_csv(os.path.join(folders[datasets.index(dataset)], dataset + '.csv'), nrows=0, sep=",")
         return df.columns
 
 #Load Dataset
@@ -37,7 +38,7 @@ def loadDataset(dataset):
         if extension == 'txt':
             df = pd.read_table(os.path.join(folders[datasets.index(dataset)], dataset + '.txt'))
         elif extension == 'csv':
-            df = pd.read_csv(os.path.join(folders[datasets.index(dataset)], dataset + '.csv'))
+            df = pd.read_csv(os.path.join(folders[datasets.index(dataset)], dataset + '.csv'), sep=",")
         return df
 
 
@@ -195,7 +196,7 @@ def graph_process(dataset = dataset):
     corrcat = request.form.get('corrcat')
     scatter = request.form.getlist('scatter1')
     scat = request.form.getlist('scatter2')
-
+    print(histogram)
     if corrcat != '': corr += [corrcat]
     ds = loadDataset(dataset)
     import ploting as plotfun
@@ -295,7 +296,73 @@ def predict_process(dataset = dataset):
     return render_template('prediction.html', predictions = predictions, response = res,
                            predictors = predictors, algorithm = alg, score = score,
                            dataset = dataset)
+################### SEQUENCIAL LEARNING ###############################3####
 
+@app.route('/datasets/<dataset>/sequential')
+def sequential(dataset):
+    columns = loadColumns(dataset=dataset)
+    return render_template('sequential.html', dataset = dataset, columns=columns)
+
+@app.route('/datasets/<dataset>/sequentialprocess', methods=['POST', 'GET'])
+def sequential_process(dataset=dataset):
+    features = request.form.getlist('features')
+    fixedtargets = request.form.get('fixedtargets')
+    targets = request.form.get('targets')
+    initial_sample = request.form.get('initial_sample')
+    iterations = request.form.get('iterate')
+    models = request.form.get('models')
+    strategy = request.form.get('strategy')
+    
+
+    dataset = loadDataset(dataset)
+
+    feature = dataset[features]
+    fixedtargets = dataset[fixedtargets]
+    target_name = targets
+    targets = dataset[targets]
+
+    initial_sample_size = int(initial_sample)
+    print('initial_sample', initial_sample_size)
+
+    iterationen = int(iterations)
+    print('iterations', iterationen)
+
+    #initial_sample_size=4 # Done
+    target_quantile=80 # range 1 - 100 -
+    sample_quantile=50# smaller than the target qualtile # not neccessary
+    #iterationen=3 # Done
+    std=2 # sigma factor
+    dist=1 # it is for MEID, MLID only. # prediction_quantile
+    model=None
+    #strategy='MEI (exploit)'
+    print(type(strategy))
+
+    s = sequential_learning(dataset,initial_sample_size,target_quantile,iterationen,sample_quantile,std,dist,model,
+                            strategy, feature, targets, fixedtargets, target_name)
+
+    if models == "Decision Trees (DT)":
+        dt=DT(models,s,targets)
+        s.model=dt
+    elif models == "lolo Random Forrest (RF)":
+        rf = RF(models, s, targets)
+        s.model=rf
+    elif models == "Random Forrest (RFscikit)":
+        rfscikit = RFscikit(models, s, targets)
+        s.model=rfscikit
+    elif models == "Gaussian Process Regression (GPR)":
+        gpr = GPR(models, s, targets)
+        s.model=gpr
+    else:
+        print('Select a model')
+
+    s = s.main()
+    return render_template('sequential.html', s=s, feature=feature, fixedtargets=fixedtargets, targets=targets,
+                                                    dataset=dataset)
+
+
+
+
+################### SEQUENCIAL LEARNING ###############################3####
 
 @app.route('/datasets/<dataset>/tutorial')
 def tutorial():
@@ -309,6 +376,8 @@ def internal_error(e):
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error404.html')
+
+
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload=True

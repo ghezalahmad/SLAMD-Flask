@@ -27,42 +27,22 @@
 			  <option value="{{mod}}.Classification">{{mod}}</option>
 		      {% endfor %}
 		    </optgroup>
-		    <optgroup label="Regression">
-		        {% for mod in predmodels %}
-			         <option value="{{mod}}.Regression">{{mod}}</option>
-		        {% endfor %}
-		    </optgroup>
-
     </select>
   </div>
 
 <!-- cross validation -->
-  <div class="col-sm">
-    <h6>K-Fold Cross-Validation:</h6>
-    <select name="kfold" class="form-control">
-        {% for i in (3,6,10) %}
-			     <option value="{{i}}">{{i}}</option>
-		    {% endfor %}
-    </select>
-  </div>
+
 
   <!-- standard scaling -->
-  <div class="col-sm">
-    <h6>Standard Scaling:</h6>
-    <select name="scaling" class="form-control">
-        {% for i in ('Yes', 'No') %}
-			     <option value="{{i}}">{{i}}</option>
-		    {% endfor %}
-    </select>
-  </div>
+
 </div>
 <br>
 <br>
 
   <!-- selecting input and target data -->
 <div class="row">
-  <div class="col-sm-8">
-   <h6>Select the variables that the model should use (leave blank for all):</h6>
+  <div class="col-sm-6">
+   <h6>Input Features:</h6>
      <select multiple name="variables" class="form-control">
 		     <option value=""></option>
             {% for col in columns %}
@@ -71,12 +51,21 @@
     </select>
   </div>
 
-  <div class="col-sm-4">
-    <h6>Target Variable:</h6>
-      <select name="response" class="form-control">
+  <div class="col-sm-3">
+    <h6>Target Feature:</h6>
+      <select multiple name="response" class="form-control">
           {% for col in columns %}
             <option value="{{col}}">{{col}}</option>
           {% endfor %}
+      </select>
+  </div>
+
+  <div class="col-sm-3">
+    <h6>Select Strategy:</h6>
+      <select name="strategy" class="form-control">
+        <option hidden>Strategy</option>
+        <option value="MLI">MLI</option>
+        <option value="MEID (exploit)">MEID (exploit)</option>
       </select>
   </div>
 </div>

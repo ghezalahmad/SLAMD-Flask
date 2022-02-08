@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, redirect, make_response, send
 import os
 import pandas as pd
 import numpy as np
-import models as algorithms
+#import models as algorithms
+import discovery as algorithms
 import ploting as plotfun
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from io import BytesIO
@@ -76,25 +77,22 @@ def dataset(description = None, head = None, dataset = None):
 def models(dataset = dataset):
     columns = loadColumns(dataset)
     clfmodels = algorithms.classificationModels()
-    predmodels = algorithms.regressionModels()
+    #predmodels = algorithms.regressionModels()
     return render_template('models.html', dataset = dataset,
                            clfmodels = clfmodels,
-                           predmodels = predmodels,
+                           #predmodels = predmodels,
                            columns = columns)
 
 @app.route('/datasets/<dataset>/modelprocess/', methods=['POST'])
 def model_process(dataset = dataset):
     algscore = request.form.get('model')
     res = request.form.get('response')
-    kfold = request.form.get('kfold')
-    alg, score = algscore.split('.')
-    scaling = request.form.get('scaling')
+    strategy = request.form.get('strategy')
     variables = request.form.getlist('variables')
-    from sklearn.model_selection import cross_validate
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.pipeline import Pipeline
+
     df = loadDataset(dataset)
     y = df[str(res)]
+    print(y)
 
     if variables != [] and '' not in variables: df = df[list(set(variables + [res]))]
     X = df.drop(str(res), axis=1)
@@ -105,31 +103,40 @@ def model_process(dataset = dataset):
     if len(predictors)>10: pred = str(len(predictors))
     else: pred = ', '.join(predictors)
 
-    if score == 'Classification':
-        from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, roc_curve, auc
-        scoring = ['precision', 'recall', 'f1', 'accuracy', 'roc_auc']
-        if scaling == 'Yes':
-            clf = algorithms.classificationModels()[alg]
-            mod = Pipeline([('scaler', StandardScaler()), ('clf', clf)])
-        else:
-            mod = algorithms.classificationModels()[alg]
-        fig = plotfun.plot_ROC(X.values, y, mod, int(kfold))
+    from sklearn.gaussian_process import GaussianProcessRegressor
+    from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
+    from sklearn import preprocessing
 
-    elif score == 'Regression':
-        from sklearn.metrics import explained_variance_score, r2_score, mean_squared_error
-        scoring = ['explained_variance', 'r2', 'mean_squared_error']
-        if scaling == 'Yes':
-            pr = algorithms.regressionModels()[alg]
-            mod = Pipeline([('scaler', StandardScaler()), ('clf', pr)])
-        else: mod = algorithms.regressionModels()[alg]
-        fig = plotfun.plot_predVSreal(X, y, mod, int(kfold))
+    kernel = C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
+    gpr = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=9)
+    gpr.fit(X, y)
+    Expected_Pred, Uncertainty= gpr.predict(X, return_std=True)
+    y_samples = gpr.sample_y(X, n_samples=5)
+    print('y_samples', y_samples)
+    Expected_Pred = pd.DataFrame(Expected_Pred.squeeze())
+    Uncertainty = pd.DataFrame(Uncertainty.squeeze())
 
-    scores = cross_validate(mod, X, y, cv=int(kfold), scoring=scoring)
-    for s in scores:
-        scores[s] = str(round(np.mean(scores[s]),3))
-    return render_template('scores.html', scores = scores, dataset = dataset, alg=alg,
-                           res = res, kfold = kfold, score = score,
-                           predictors = pred, response = str(fig, 'utf-8'))
+    ep = Expected_Pred.set_axis(['Prediction'], axis=1)
+    un = Uncertainty.set_axis(['Uncertainty'], axis=1)
+    var_data = pd.concat([X, y], axis=1)
+    pre_data = pd.concat([un, ep], axis=1)
+    all_data = pd.concat([var_data, pre_data], axis=1)
+    ser = Expected_Pred + Uncertainty
+    # Normalize the utility
+    if strategy == 'MLI':
+        scaler = preprocessing.StandardScaler().fit(ser)
+        ser_scaled = scaler.transform(ser)
+        pdscaled = pd.DataFrame(data=ser_scaled)
+        pdscaled = pdscaled.set_axis(['Utility'], axis=1)
+        print(type(ser_scaled))
+    fig = plotfun.gpr_graph()
+    all_data = pd.concat([all_data, pdscaled], axis=1)
+    all_data = all_data.head(10)
+
+
+    return render_template('scores.html', dataset = dataset, algscore=algscore, res = res, gpr=gpr,
+         all_data=all_data.to_html(classes='table table-striped table-hover card-body'), fig=fig)
+    #,   #kfold = kfold, response = str(fig, 'utf-8'))
 
 @app.route('/datasets/<dataset>/preprocessing')
 def preprocessing(dataset = dataset):
@@ -215,87 +222,7 @@ def graph_process(dataset = dataset):
 
     return render_template('drawgraphs.html', figs = figs, dataset = dataset)
 
-@app.route('/datasets/<dataset>/predict')
-def predict(dataset = dataset):
-    columns = loadColumns(dataset)
-    clfmodels = algorithms.classificationModels()
-    predmodels = algorithms.regressionModels()
-    return render_template('predict.html', dataset = dataset,
-                           clfmodels = clfmodels,
-                           predmodels = predmodels,
-                           columns = columns)
 
-@app.route('/datasets/<dataset>/prediction/', methods=['POST'])
-def predict_process(dataset = dataset):
-    algscore = request.form.get('model')
-    res = request.form.get('response')
-    alg, score = algscore.split('.')
-    scaling = request.form.get('scaling')
-    df = loadDataset(dataset)
-    columns = df.columns
-    values = {}
-    counter = 0
-    for col in columns:
-        values[col] = request.form.get(col)
-        if values[col] != '' and col != res: counter +=1
-
-    if counter == 0: return redirect('/datasets/' + dataset + '/predict')
-
-    predictors = {}
-    for v in values:
-        if values[v] != '':
-            try: predictors[v] = [float(values[v])]
-            except: predictors[v] = [values[v]]
-
-    from sklearn.preprocessing import StandardScaler
-    X = df[list(predictors.keys())]
-    Xpred = predictors
-    #return str(Xpred)
-    Xpred = pd.DataFrame(data=Xpred)
-    X = pd.concat([X,Xpred])
-    X = pd.get_dummies(X)
-    Xpred = X.iloc[[-1]]
-    X = X[:-1]
-    if scaling == 'Yes':
-        scaler = StandardScaler()
-        X = pd.DataFrame(scaler.fit_transform(X), columns = X.columns)
-        Xpred = pd.DataFrame(scaler.transform(Xpred), columns = X.columns)
-    try:
-        X = X.drop(str(res), axis=1)
-        Xpred = Xpred.drop(str(res), axis=1)
-    except: pass
-    #Xpred.reset_index(drop=True, inplace=True)
-    #X.reset_index(drop=True, inplace=True)
-    y = df[str(res)]
-    if score == 'Classification':
-            mod = algorithms.classificationModels()[alg]
-    elif score == 'Regression':
-        mod = algorithms.regressionModels()[alg]
-    model = mod.fit(X, y)
-    #return pd.DataFrame(Xpred).to_html()
-    predictions = {}
-    predictions['Prediction'] = model.predict(Xpred)[0]
-    predictors.pop(res, None)
-    for p in predictors:
-        if str(predictors[p][0]).isdigit() is True: predictors[p] = int(predictors[p][0])
-        else:
-            try: predictors[p] = round(predictors[p][0],2)
-            except: predictors[p] = predictors[p][0]
-    for p in predictions:
-        if str(predictions[p]).isdigit() is True: predictions[p] = int(predictions[p])
-        else:
-            try: predictions[p] = round(predictions[p],2)
-            except: continue
-    if len(predictors) > 15: predictors = {'Number of predictors': len(predictors)}
-    #return str(predictors) + res + str(predictions) + alg + score
-    if score == 'Classification':
-        classes = model.classes_
-        pred_proba = model.predict_proba(Xpred)
-        for i in range(len(classes)):
-            predictions['Prob. ' + str(classes[i])] = round(pred_proba[0][i],3)
-    return render_template('prediction.html', predictions = predictions, response = res,
-                           predictors = predictors, algorithm = alg, score = score,
-                           dataset = dataset)
 ################### SEQUENCIAL LEARNING ###############################3####
 
 @app.route('/datasets/<dataset>/sequential')
@@ -311,12 +238,16 @@ def sequential_process(dataset=dataset):
     initial_sample = request.form.get('initial_sample')
     iterations = request.form.get('iterate')
     models = request.form.get('models')
-    strategy = request.form.get('strategy')
-    
+    #strategy = request.form.get('strategy')
+    dist = request.form.get('dist')
+
 
     dataset = loadDataset(dataset)
 
-    feature = dataset[features]
+    features = dataset[features]
+    target_selction = dataset.columns[~dataset.columns.isin(features)]
+
+
     fixedtargets = dataset[fixedtargets]
     target_name = targets
     targets = dataset[targets]
@@ -328,21 +259,23 @@ def sequential_process(dataset=dataset):
     print('iterations', iterationen)
 
     #initial_sample_size=4 # Done
-    target_quantile=80 # range 1 - 100 -
+    dist= dist # range 1 - 100 -
+    target_quantile = 80
     sample_quantile=50# smaller than the target qualtile # not neccessary
     #iterationen=3 # Done
     std=2 # sigma factor
-    dist=1 # it is for MEID, MLID only. # prediction_quantile
+    #dist=1 # it is for MEID, MLID only. # prediction_quantile
     model=None
-    #strategy='MEI (exploit)'
+    strategy='MEI (exploit)'
     print(type(strategy))
 
     s = sequential_learning(dataset,initial_sample_size,target_quantile,iterationen,sample_quantile,std,dist,model,
-                            strategy, feature, targets, fixedtargets, target_name)
+                            strategy, features, targets, fixedtargets, target_name)
 
     if models == "Decision Trees (DT)":
         dt=DT(models,s,targets)
         s.model=dt
+        s = s.main()
     elif models == "lolo Random Forrest (RF)":
         rf = RF(models, s, targets)
         s.model=rf
@@ -355,14 +288,15 @@ def sequential_process(dataset=dataset):
     else:
         print('Select a model')
 
-    s = s.main()
-    return render_template('sequential.html', s=s, feature=feature, fixedtargets=fixedtargets, targets=targets,
-                                                    dataset=dataset)
 
-
-
+    return render_template('sequential.html', s=s, features=features, fixedtargets=fixedtargets, targets=targets,
+                                                    dataset=dataset,target_selection=target_selection)
 
 ################### SEQUENCIAL LEARNING ###############################3####
+
+################### Material Discovery ###############################3####
+
+################### Material Discovery ###############################3####
 
 @app.route('/datasets/<dataset>/tutorial')
 def tutorial():

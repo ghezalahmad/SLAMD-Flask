@@ -109,6 +109,7 @@ class DT(Model):
 
         return Expected_Pred, Uncertainty
 
+
 class RF(Model):
     def __init__(self,name,sequential_learning,targets):
         self.name=name
@@ -229,9 +230,6 @@ class sequential_learning:
         self.dataframe=dataframe_norm
 
 
-
-
-
     def init_sampling(self):
         s = pd.concat([self.dataframe[self.target_name], self.fixedtargets], axis=1)
         print('s',s)
@@ -279,13 +277,11 @@ class sequential_learning:
 
             init_sample_set=self.init_sampling()
             s = pd.concat([self.dataframe[self.target_name], self.fixedtargets], axis=1)
-            print('s',s)
             sum_ = s.sum(axis=1)
 
             fixed_targets_index=self.fixedtargets
-            print(type(fixed_targets_index))
+
             s2 = pd.concat([self.dataframe[self.target_name], fixed_targets_index.to_frame()], axis=1)
-            print('s2', s2)
             sum_ = s2.sum(axis=1)
             #sum_ = self.dataframe[self.target_name].sum(axis=1).to_frame()+self.dataframe[fixed_targets_index].sum(axis=1).to_frame()
 

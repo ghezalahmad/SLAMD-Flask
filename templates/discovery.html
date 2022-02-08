@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/preprocessing">sequential</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Overview</li>
+    </ol>
+  </nav>
+  <form class="form-group" method="post" action='/datasets/{{dataset}}/material_discovery'>
+    <h3 class="form-features-heading" align=''>Settings</h3>
+    <br>
+
+    <!-- selecting features, fixed_target and target data -->
+<!-- ------------------------------------------------------------------------------- -->
+<!-- selecting features, fixed_target and target data -->
+<!-- ------------------------------------------------------------------------------- -->
+<div class="row">
+<div class="col-sm-5">
+  <h6>Features:</h6>
+   <select multiple name="features" class="form-control" required>
+      <option value=""></option>
+        {% for col in columns %}
+          <option value="{{col}}">{{col}}</option>
+        {% endfor %}
+  </select>
+</div>
+
+<div class="col-sm-4">
+  <h6>Target Variable:</h6>
+    <select multiple name="targets" class="form-control" required>
+      {% for col in columns %}
+        <option value="{{col}}">{{col}}</option>
+      {% endfor %}
+    </select>
+</div>
+
+</div>
+<br>
+<!-- ------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------- -->
+<br><br>
+  <button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
+</form>
+
+</main>
+{% endblock %}

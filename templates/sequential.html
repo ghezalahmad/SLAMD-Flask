@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-sm-5">
       <h6>Features:</h6>
-       <select multiple name="features" class="form-control" required>
+       <select multiple id="select_feature" name="features" class="form-control" required>
   		    <option value=""></option>
             {% for col in columns %}
   			      <option value="{{col}}">{{col}}</option>
@@ -29,18 +29,13 @@
 
     <div class="col-sm-4">
       <h6>Target Variable:</h6>
-        <select multiple name="targets" class="form-control" required>
-          {% for col in columns %}
-            <option value="{{col}}">{{col}}</option>
-          {% endfor %}
+        <select multiple id="select_target" name="targets" class="form-control" required>
         </select>
     </div>
     <div class="col-sm-3">
       <h6>Fixed Target:</h6>
-        <select multiple name="fixedtargets" class="form-control" required>
-          {% for col in columns %}
-            <option value="{{col}}">{{col}}</option>
-          {% endfor %}
+        <select multiple id="select_fixedtargets" name="fixedtargets" class="form-control" required>
+
         </select>
     </div>
   </div>
@@ -65,9 +60,9 @@
         </select>
     </div>
 
-    <div class="col-sm-3" id="prediction" hidden="hidden">
+    <div class="col-sm-3" id="prediction">
       <label for="customRange4" class="form-label">Prediction quantile:</label>
-      <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange4" onInput="$('#rangeval4').html($(this).val())">
+      <input name='dist' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange4" onInput="$('#rangeval4').html($(this).val())">
       <span id="rangeval4"><!-- Default value --></span>
     </div>
   </div>
@@ -82,19 +77,19 @@
 
     <div class="col-sm-4">
       <h7>Strategy:</h7>
-        <select name="strategy" class="form-control" id="strategy">
+        <select id="strategy" name="strategies" class="form-control">
           <option hidden>Select Strategy</option>
-          <option value="1">MEI (exploit)</option>
-          <option value="2">MU (explore)</option>
-          <option value="3">MLI (exploit & explore)</option>
-          <option value="4">MEID (exploit)</option>
-          <option value="5">MLID (explore & exploit)</option>
+          <option value="MEI (exploit)">MEI (exploit)</option>
+          <option value="MU (explore)">MU (explore)</option>
+          <option value="MLI (exploit & explore)">MLI (exploit & explore)</option>
+          <option value="MEID (exploit)">MEID (exploit)</option>
+          <option value="MLID (explore & exploit)">MLID (explore & exploit)</option>
         </select>
     </div>
 
-    <div class="col-sm-3" id="sigma" hidden="hidden">
+    <div class="col-sm-3" id="sigma">
       <label for="customRange5" class="form-label">sigma factor:</label>
-      <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8"  step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
+      <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8" step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
       <span id="rangeval5"><!-- Default value --></span>
     </div>
   </div>
@@ -102,6 +97,60 @@
   <br><br>
     <button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
   </form>
+  <script>
+    $("#strategy").change(function(){
+      var abc = $('#strategy').val();
+      if (abc == 'MEI (exploit)'){
+        //alert('hello');
+        //$document.getElementByID('first').show();
+        $('#sigma').hide();
+        $('#prediction').hide();
+      } else if (abc == 'MU (explore)'){
+        $('#prediction').hide();
+        $('#sigma').hide();
+      } else if (abc == 'MLI (exploit & explore)'){
+        $('#prediction').hide();
+        $('#sigma').show();
+      } else if (abc == 'MEID (exploit)'){
+        $('#sigma').hide();
+        $('#prediction').show();
+      } else if (abc == 'MLID (explore & exploit)'){
+        $('#sigma').show();
+        $('#prediction').show();
+      } else {
+        alert('select a option');
+      }
 
+    });
+
+    $('#select_feature').change(function(){
+      var mylist = $('#select_feature').val();
+      if ($("#select_feature").find('option').not(':selected').length > 0){
+        var notSelected = $("#select_feature").find('option').not(':selected');
+        var unselectedgltype = notSelected.map(function () { return this.value; }).get();}
+
+      $('#select_target').empty();
+        //alert(unselectedgltype);
+      $(unselectedgltype).each(function(index, element) {
+        $('<option/>').val(element).text(element).appendTo('#select_target');
+      });
+    });
+
+    $('#select_target').change(function(){
+      var mylist = $('#select_target').val();
+      if ($("#select_target").find('option').not(':selected').length > 0){
+        var notSelected2 = $("#select_target").find('option').not(':selected');
+        var unselectedgltype2 = notSelected2.map(function () { return this.value; }).get();}
+
+      $('#select_fixedtargets').empty();
+
+        //alert(unselectedgltype);
+      $(unselectedgltype2).each(function(index, element) {
+        $('<option/>').val(element).text(element).appendTo('#select_fixedtargets');
+
+      });
+    });
+
+  </script>
 </main>
 {% endblock %}

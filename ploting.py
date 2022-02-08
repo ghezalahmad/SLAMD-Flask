@@ -3,12 +3,30 @@ import numpy as np
 import seaborn as sns
 import plotly.express as px
 
+
+def gpr_graph():
+    from io import BytesIO
+    plt.xlabel('')
+    plt.legend()
+    figfile = BytesIO()
+    plt.savefig(figfile, format='png')
+    figfile.seek(0)  # rewind to beginning of file
+    import base64
+    figdata_png = base64.b64encode(figfile.getvalue())
+    return figdata_png
+
+
+
+
+
+
+
 #Plot ROC curves
-def plot_ROC(X, y, classifier, cv):
+def plot_ROC(X, y, classifier):
     from sklearn.metrics import roc_curve, auc
     from sklearn.model_selection import StratifiedKFold
     from scipy import interp
-    cv = StratifiedKFold(n_splits=cv)
+    cv = StratifiedKFold(n_splits=2)
 
     tprs = []
     aucs = []

@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
 
-<h4 align='center'><b>Algorithm:</b> {{alg}}</h4>
-<h4 align='center'><b>Objective:</b> {{score}}</h4>
-<h4 align='center'><b>Response Variable: </b>{{res}}</h4>
-<h4 align='center'><b>Predictors:</b> {{predictors}}</h4>
-<h4 align='center'><b>K-Fold:</b> {{kfold}}</h4>
-<br>
-<div class="row">
-<h4 align='center'><b>Scores and Visualization:</b></h4>
-<div class="col-sm-6">
-	<div class="scrollme">
-	  <table class="table table-striped table-hover">
-         {% for key, value in scores.items() %}
-            <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
-            </tr>
-		{% endfor %}
-	</table>
-	</div></div>
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/models">Models</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Overview</li>
+
+      </ol>
+  </nav>
+  <div class="row">
+	<h6 align='center'><b>Algorithm:</b> {{algscore}}</h6>
+	<h6 align='center'><b>Target Variable: </b>{{res}}</h6>
+	<h6 align='center'><b>Predictors:</b> {{gpr}}</h6>
+	<br>
+		<br>
+	<h6 align='center'><b>Model Output</b> {{all_data | safe}}</h6>
+	<br>
+  	<br>
 
 <div class="col-sm-6">
-	<img src="data:image/png;base64, {{response}}">
-	</div></div>
+	<img src="data:image/png;base64, {{fig}}">
 </div>
+</div>
+
+</main>
+
 {% endblock %}

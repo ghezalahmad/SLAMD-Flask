@@ -210,7 +210,7 @@ class sequential_learning:
         #print('self.fixedtargets', self.fixedtargets)
         if(len(self.fixedtargets.values.tolist())>0):
             self.target_df= pd.concat([self.target_df, self.fixedtargets], axis=1)   #self.target_df.join(self.fixedtargets)
-            print('self.target_df', self.target_df)
+            #print('self.target_df', self.target_df)
         self.standardize_data()
         init_sample_set=self.init_sampling()
 
@@ -232,14 +232,14 @@ class sequential_learning:
 
     def init_sampling(self):
         s = pd.concat([self.dataframe[self.target_name], self.fixedtargets], axis=1)
-        print('s',s)
+        #print('s',s)
         sum_ = s.sum(axis=1)
         #sum_ = self.dataframe.loc[self.targets]
 
 
         #sum_ = sum_.sum(axis=1)
 
-        print('sum_', sum_)
+        #print('sum_', sum_)
         samp_q_t=sum_.quantile(self.sample_treshold) #target threshold here
         Index_label=np.where(sum_ < samp_q_t )
         Index_label=Index_label[0]
@@ -546,7 +546,7 @@ class sequential_learning:
     def perform_random_pick(self,acutal_iter):
         s3 = pd.concat([self.dataframe[self.target_name], self.fixedtargets.to_frame()], axis=1)
         sum_ = s3.sum(axis=1)
-        print('sum s3', sum_)
+        #print('sum s3', sum_)
         index_sum=sum_.index.to_numpy()
         index_sum_randomized=np.random.choice(index_sum,len(index_sum),False)
         targ_q_t= sum_.quantile(self.target_treshhold)

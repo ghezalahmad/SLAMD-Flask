@@ -83,11 +83,12 @@ def models(dataset = dataset):
                            #predmodels = predmodels,
                            columns = columns)
 
+
 @app.route('/datasets/<dataset>/modelprocess/', methods=['POST'])
 def model_process(dataset = dataset):
     algscore = request.form.get('model')
     res = request.form.get('response')
-    strategy = request.form.get('strategy')
+    strategy = request.form.get('strategies')
     variables = request.form.getlist('variables')
 
     df = loadDataset(dataset)
@@ -123,7 +124,7 @@ def model_process(dataset = dataset):
     all_data = pd.concat([var_data, pre_data], axis=1)
     ser = Expected_Pred + Uncertainty
     # Normalize the utility
-    if strategy == 'MLI':
+    if strategy == 'MEI (exploit)':
         scaler = preprocessing.StandardScaler().fit(ser)
         ser_scaled = scaler.transform(ser)
         pdscaled = pd.DataFrame(data=ser_scaled)
@@ -233,14 +234,68 @@ def sequential(dataset):
 @app.route('/datasets/<dataset>/sequentialprocess', methods=['POST', 'GET'])
 def sequential_process(dataset=dataset):
     features = request.form.getlist('features')
-    fixedtargets = request.form.get('fixedtargets')
-    targets = request.form.get('targets')
+    fixedtargets = request.form.getlist('fixedtargets')
+
+    targets = request.form.getlist('targets')
     initial_sample = request.form.get('initial_sample')
     iterations = request.form.get('iterate')
     models = request.form.get('models')
     #strategy = request.form.get('strategy')
     dist = request.form.get('dist')
 
+    min_or_max_target = {}
+    for t in targets:
+        x = 'R_'+t
+        min_or_max_target[t]= request.form.get(x)
+    print(min_or_max_target)
+    print(targets)
+
+    check_to_use_threshold = {}
+    for t in targets:
+        x = 'C_'+t
+        check_to_use_threshold[t]= request.form.get(x)
+    print(check_to_use_threshold)
+
+
+    target_selected_number1 = {}
+    for t in targets:
+        x = 'N1_'+t
+        target_selected_number1[t]= request.form.get(x)
+    print(target_selected_number1)
+
+    target_selected_number2 = {}
+    for t in targets:
+        x = 'N2_'+t
+        target_selected_number2[t]= request.form.get(x)
+    print(target_selected_number2)
+
+
+#---------------------------------
+    min_or_max_fixedtarget = {}
+    for t in fixedtargets:
+        x = 'R1_'+t
+        min_or_max_fixedtarget[t]= request.form.get(x)
+    print(min_or_max_fixedtarget)
+    print(targets)
+
+    check_to_use_threshold_ft = {}
+    for t in fixedtargets:
+        x = 'C1_'+t
+        check_to_use_threshold_ft[t]= request.form.get(x)
+    print(check_to_use_threshold_ft)
+
+
+    fixedtarget_selected_number1 = {}
+    for t in fixedtargets:
+        x = 'N11_'+t
+        fixedtarget_selected_number1[t]= request.form.get(x)
+    print(fixedtarget_selected_number1)
+
+    fixedtarget_selected_number2 = {}
+    for t in fixedtargets:
+        x = 'N22_'+t
+        fixedtarget_selected_number2[t]= request.form.get(x)
+    print(fixedtarget_selected_number2)
 
     dataset = loadDataset(dataset)
 
@@ -252,11 +307,12 @@ def sequential_process(dataset=dataset):
     target_name = targets
     targets = dataset[targets]
 
+
     initial_sample_size = int(initial_sample)
-    print('initial_sample', initial_sample_size)
+    #print('initial_sample', initial_sample_size)
 
     iterationen = int(iterations)
-    print('iterations', iterationen)
+    #print('iterations', iterationen)
 
     #initial_sample_size=4 # Done
     dist= dist # range 1 - 100 -
@@ -267,11 +323,10 @@ def sequential_process(dataset=dataset):
     #dist=1 # it is for MEID, MLID only. # prediction_quantile
     model=None
     strategy='MEI (exploit)'
-    print(type(strategy))
+    #print(type(strategy))
 
     s = sequential_learning(dataset,initial_sample_size,target_quantile,iterationen,sample_quantile,std,dist,model,
                             strategy, features, targets, fixedtargets, target_name)
-
     if models == "Decision Trees (DT)":
         dt=DT(models,s,targets)
         s.model=dt
@@ -294,9 +349,7 @@ def sequential_process(dataset=dataset):
 
 ################### SEQUENCIAL LEARNING ###############################3####
 
-################### Material Discovery ###############################3####
 
-################### Material Discovery ###############################3####
 
 @app.route('/datasets/<dataset>/tutorial')
 def tutorial():

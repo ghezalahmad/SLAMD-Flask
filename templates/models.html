@@ -20,7 +20,7 @@
 <!-- Model part -->
 <div class="row">
   <div class="col-sm">
-    <h6>Algorithm</h6>
+    <h6>Models</h6>
     <select name="model" class="form-control">
 		    <optgroup label="Classification">
           {% for mod in clfmodels %}
@@ -29,48 +29,168 @@
 		    </optgroup>
     </select>
   </div>
-
-<!-- cross validation -->
-
-
-  <!-- standard scaling -->
-
 </div>
 <br>
 <br>
 
   <!-- selecting input and target data -->
-<div class="row">
-  <div class="col-sm-6">
-   <h6>Input Features:</h6>
-     <select multiple name="variables" class="form-control">
-		     <option value=""></option>
-            {% for col in columns %}
-			         <option value="{{col}}">{{col}}</option>
-		        {% endfor %}
-    </select>
-  </div>
 
-  <div class="col-sm-3">
-    <h6>Target Feature:</h6>
-      <select multiple name="response" class="form-control">
+
+  <!-- selecting features, fixed_target and target data -->
+<!-- ------------------------------------------------------------------------------- -->
+<div class="row">
+  <div class="col-sm-4">
+    <h6>input Features:</h6>
+     <select multiple id="dm_feature" name="variables" class="form-control" required>
+        <option value=""></option>
           {% for col in columns %}
             <option value="{{col}}">{{col}}</option>
           {% endfor %}
-      </select>
+    </select>
   </div>
 
-  <div class="col-sm-3">
-    <h6>Select Strategy:</h6>
-      <select name="strategy" class="form-control">
-        <option hidden>Strategy</option>
-        <option value="MLI">MLI</option>
-        <option value="MEID (exploit)">MEID (exploit)</option>
+  <div class="col-sm-4">
+    <h6>Target Variable:</h6>
+      <select multiple id="dm_target" name="response" class="form-control" required>
+      </select>
+  </div>
+  <div class="col-sm-4">
+    <h6>Fixed Target:</h6>
+      <select multiple id="dm_fixedtargets" name="fixedtargets" class="form-control" required>
+
       </select>
   </div>
 </div>
+<br>
+
+<div class="row" id="sub_option">
+  <div class="col-sm-4" id="sub_option2">
+  </div>
+</div>
+<div class="row" id="sub2_option">
+  <div class="col-sm-4" id="sub2_option2">
+  </div>
+</div>
+<!-- ------------------------------------------------------------------------------- -->
+<br>
+<div class="row">
+
+<div class="col-sm-4">
+  <h7>Strategy:</h7>
+    <select id="strategy" name="strategies" class="form-control">
+      <option hidden>Select Strategy</option>
+      <option value="MEI (exploit)">MEI (exploit)</option>
+      <option value="MLI (exploit & explore)">MLI (exploit & explore)</option>
+    </select>
+</div>
+
+<div class="col-sm-4" id="sigma">
+  <label for="customRange5" class="form-label">sigma factor:</label>
+  <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8" step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
+  <span id="rangeval5"><!-- Default value --></span>
+</div>
+</div>
+<!-- ------------------------------------------------------------------------------- -->
 <br><br>
-  <button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
+<button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
 </form>
+<script>
+$("#strategy").change(function(){
+  var abc = $('#strategy').val();
+  if (abc == 'MEI (exploit)'){
+    //alert('hello');
+    //$document.getElementByID('first').show();
+    $('#sigma').hide();
+  } else if (abc == 'MLI (exploit & explore)'){
+    $('#sigma').show();
+  } else {
+    alert('select a option');
+  }
+
+});
+
+$('#dm_feature').change(function(){
+  var mylist = $('#dm_feature').val();
+  if ($("#dm_feature").find('option').not(':selected').length > 0){
+    var notSelected = $("#dm_feature").find('option').not(':selected');
+    var unselectedgltype = notSelected.map(function () { return this.value; }).get();}
+
+  $('#dm_target').empty();
+    //alert(unselectedgltype);
+  $(unselectedgltype).each(function(index, element) {
+    $('<option/>').val(element).text(element).appendTo('#dm_target');
+  });
+});
+
+$('#dm_target').change(function(){
+  var mylist = $('#dm_target').val();
+  if ($("#dm_target").find('option').not(':selected').length > 0){
+    var notSelected2 = $("#dm_target").find('option').not(':selected');
+    var unselectedgltype2 = notSelected2.map(function () { return this.value; }).get();}
+
+  $('#dm_fixedtargets').empty();
+
+    //alert(unselectedgltype);
+  $(unselectedgltype2).each(function(index, element) {
+    $('<option/>').val(element).text(element).appendTo('#dm_fixedtargets');
+
+  });
+
+  var3 = $('#dm_target').val().length;
+  $('#sub_option').empty();
+  for (i=0; i< var3; i++) {
+
+  //console.log($('#sigma2').val());
+  //$('#sigma2');
+    arr = $('#dm_target').val();
+
+//$('#sub_option').text($('#sigma2').val());
+    $('#sub_option').append(`
+      <div class="col-sm-1">
+      <label for=${arr[i]}>${arr[i]}</label>
+      </div>
+      <div class="col-sm-2">
+      <label for=${arr[i]}>minimize</label>
+
+      <input type="radio" name='"R_+${arr[i]}"' value="minimize"></input></br>
+      <label for=${arr[i]}>maximize</label>
+      <input type="radio" name="R_'+${arr[i]}+'" value="maximize"></input>
+      </div>
+
+      <div class="col-sm-1">
+      <label for=${arr[i]}> Weight ${arr[i]}</label>
+      </div>
+      <div class="col-sm-2">
+      <input type="number" name="N2_${arr[i]}" step="1"> </input>
+      </div> </br>`);
+  };
+
+
+  priori = $('#dm_fixedtargets').val().length;
+  $('#sub2_option').empty();
+  for (j=0; j< priori; j++) {
+    arr2 = $('#dm_fixedtargets').val();
+    $('#sub2_option').append(`
+      <div class="col-sm-1">
+      <label for=${arr2[j]}>${arr2[j]}</label>
+      </div>
+      <div class="col-sm-2">
+      <label for=${arr2[j]}>minimize</label>
+
+      <input type="radio" name='"R_+${arr2[j]}"' value="minimize"></input></br>
+      <label for=${arr2[j]}>maximize</label>
+      <input type="radio" name="R_'+${arr2[j]}+'" value="maximize"></input>
+      </div>
+
+      <div class="col-sm-1">
+      <label for=${arr2[j]}> Weight ${arr2[j]}</label>
+      </div>
+      <div class="col-sm-2">
+      <input type="number" name="N2_${arr2[j]}" step="1"> </input>
+      </div> </br>`);
+  };
+});
+
+</script>
 </main>
 {% endblock %}

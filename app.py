@@ -124,7 +124,8 @@ def model_process(dataset = dataset):
     all_data = pd.concat([var_data, pre_data], axis=1)
     ser = Expected_Pred + Uncertainty
     # Normalize the utility
-    if strategy == 'MEI (exploit)':
+    # train expected
+    if strategy == 'MLI (exploit)':
         scaler = preprocessing.StandardScaler().fit(ser)
         ser_scaled = scaler.transform(ser)
         pdscaled = pd.DataFrame(data=ser_scaled)
@@ -233,119 +234,122 @@ def sequential(dataset):
 
 @app.route('/datasets/<dataset>/sequentialprocess', methods=['POST', 'GET'])
 def sequential_process(dataset=dataset):
-    features = request.form.getlist('features')
-    fixedtargets = request.form.getlist('fixedtargets')
+    dataframe = loadDataset(dataset)
+    initial_sample_size = int(request.form.get('initial_sample_size'))
+    batch_size = int(request.form.get('batch_size'))
+    target_treshhold = int(request.form.get('target_treshhold'))
+    number_of_executions = int(request.form.get('number_of_executions'))
+    sigma = request.form.get('sigma_factor')
+    model = request.form.get('models')
+    strategy = request.form.get('strategy')
+    target_df = request.form.getlist('targets')
+    fixed_targets_idx = request.form.getlist('fixedtargets')
+    feature_df = request.form.getlist('features')
 
-    targets = request.form.getlist('targets')
-    initial_sample = request.form.get('initial_sample')
-    iterations = request.form.get('iterate')
-    models = request.form.get('models')
-    #strategy = request.form.get('strategy')
-    dist = request.form.get('dist')
 
+
+
+# --- This is the min_max of benchmarking ---------
     min_or_max_target = {}
-    for t in targets:
+    for t in target_df:
         x = 'R_'+t
         min_or_max_target[t]= request.form.get(x)
-    print(min_or_max_target)
-    print(targets)
 
-    check_to_use_threshold = {}
-    for t in targets:
+
+    check_to_use_threshold_t = {}
+    for t in target_df:
         x = 'C_'+t
-        check_to_use_threshold[t]= request.form.get(x)
-    print(check_to_use_threshold)
+        check_to_use_threshold_t[t]= request.form.get(x)
 
 
     target_selected_number1 = {}
-    for t in targets:
+    for t in target_df:
         x = 'N1_'+t
         target_selected_number1[t]= request.form.get(x)
-    print(target_selected_number1)
 
     target_selected_number2 = {}
-    for t in targets:
+    for t in target_df:
         x = 'N2_'+t
         target_selected_number2[t]= request.form.get(x)
-    print(target_selected_number2)
 
 
 #---------------------------------
     min_or_max_fixedtarget = {}
-    for t in fixedtargets:
+    for t in fixed_targets_idx:
         x = 'R1_'+t
         min_or_max_fixedtarget[t]= request.form.get(x)
-    print(min_or_max_fixedtarget)
-    print(targets)
+
 
     check_to_use_threshold_ft = {}
-    for t in fixedtargets:
+    for t in fixed_targets_idx:
         x = 'C1_'+t
         check_to_use_threshold_ft[t]= request.form.get(x)
-    print(check_to_use_threshold_ft)
 
 
     fixedtarget_selected_number1 = {}
-    for t in fixedtargets:
+    for t in fixed_targets_idx:
         x = 'N11_'+t
         fixedtarget_selected_number1[t]= request.form.get(x)
-    print(fixedtarget_selected_number1)
 
     fixedtarget_selected_number2 = {}
-    for t in fixedtargets:
+    for t in fixed_targets_idx:
         x = 'N22_'+t
         fixedtarget_selected_number2[t]= request.form.get(x)
-    print(fixedtarget_selected_number2)
-
-    dataset = loadDataset(dataset)
-
-    features = dataset[features]
-    target_selction = dataset.columns[~dataset.columns.isin(features)]
+# ------------------------------------------------
 
 
-    fixedtargets = dataset[fixedtargets]
-    target_name = targets
-    targets = dataset[targets]
 
+    feature_df = dataframe[feature_df]
+    #target_selction = dataframe.columns[~dataframe.columns.isin(features)]
+    #fixed_targets_idx = dataframe[fixed_targets_idx]
+    #target_name = targets
+    #target_df = dataframe[target_df]
 
-    initial_sample_size = int(initial_sample)
+    #initial_sample_size = int(initial_sample_size)
     #print('initial_sample', initial_sample_size)
 
-    iterationen = int(iterations)
+
     #print('iterations', iterationen)
 
     #initial_sample_size=4 # Done
-    dist= dist # range 1 - 100 -
-    target_quantile = 80
-    sample_quantile=50# smaller than the target qualtile # not neccessary
+    #dist= dist # range 1 - 100 -
+    #target_quantile = 80
+    #sample_quantile=50# smaller than the target qualtile # not neccessary
     #iterationen=3 # Done
-    std=2 # sigma factor
-    #dist=1 # it is for MEID, MLID only. # prediction_quantile
-    model=None
-    strategy='MEI (exploit)'
+    #std=2 # sigma factor
+    dist=1 # it is for MEID, MLID only. # prediction_quantile
+    #model=None
+    #strategy='MEI (exploit)'
     #print(type(strategy))
 
-    s = sequential_learning(dataset,initial_sample_size,target_quantile,iterationen,sample_quantile,std,dist,model,
-                            strategy, features, targets, fixedtargets, target_name)
-    if models == "Decision Trees (DT)":
-        dt=DT(models,s,targets)
+
+
+
+
+    s = sequential_learning(dataframe,initial_sample_size,batch_size, target_treshhold, number_of_executions,
+             sigma, dist, model, strategy, target_df, fixed_targets_idx, feature_df, min_or_max_target, check_to_use_threshold_t,
+             target_selected_number1,target_selected_number2, min_or_max_fixedtarget, check_to_use_threshold_ft,
+             fixedtarget_selected_number1, fixedtarget_selected_number2)
+    s.main()
+    """
+    if model == "Decision Trees (DT)":
+        dt=DT(model,s,targets)
         s.model=dt
         s = s.main()
-    elif models == "lolo Random Forrest (RF)":
-        rf = RF(models, s, targets)
+    elif model == "lolo Random Forrest (RF)":
+        rf = RF(model, s, targets)
         s.model=rf
-    elif models == "Random Forrest (RFscikit)":
-        rfscikit = RFscikit(models, s, targets)
+    elif model == "Random Forrest (RFscikit)":
+        rfscikit = RFscikit(model, s, targets)
         s.model=rfscikit
-    elif models == "Gaussian Process Regression (GPR)":
-        gpr = GPR(models, s, targets)
+    elif model == "Gaussian Process Regression (GPR)":
+        gpr = GPR(model, s, targets)
         s.model=gpr
     else:
         print('Select a model')
+    """
 
-
-    return render_template('sequential.html', s=s, features=features, fixedtargets=fixedtargets, targets=targets,
-                                                    dataset=dataset,target_selection=target_selection)
+    return render_template('sequential.html', s=s)
 
 ################### SEQUENCIAL LEARNING ###############################3####
 

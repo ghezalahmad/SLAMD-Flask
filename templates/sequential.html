@@ -18,7 +18,7 @@
 <!-- ------------------------------------------------------------------------------- -->
   <div class="row">
     <div class="col-sm-4">
-      <h6>Features:</h6>
+      <h6>Materials Data (Input)</h6>
        <select multiple id="select_feature" name="features" class="form-control" required>
   		    <option value=""></option>
             {% for col in columns %}
@@ -28,7 +28,7 @@
     </div>
 
     <div class="col-sm-4">
-      <h6>Target Variable:</h6>
+      <h6>Target Properties</h6>
         <select multiple id="select_target" name="targets" class="form-control" required>
         </select>
     </div>
@@ -57,10 +57,17 @@
 <!-- selecting Initial sample size and model_selection -->
   <div class="row">
     <div class="col-sm-4">
-      <label for="customRange2" class="form-label">Initial Samples Size:</label>
-      <input name='initial_sample' type="number" class="form-control" min="1" max="100" id="customRange2">
-      <span id="rangeval"><!-- Default value --></span>
+      <h6>Batch Size</h6>
+      <input name='batch_size' type="number" class="form-control" min="1" max="100" >
     </div>
+  </div>
+<br>
+  <div class="row">
+    <div class="col-sm-4">
+      <h6>Initial Samples Size:</h6>
+      <input name='initial_sample_size' type="number" class="form-control" min="1" max="100">
+    </div>
+
 
     <div class="col-sm-4">
       <h7>Model:</h7>
@@ -75,7 +82,7 @@
 
     <div class="col-sm-4" id="prediction">
       <label for="customRange4" class="form-label">Prediction quantile:</label>
-      <input name='dist' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange4" onInput="$('#rangeval4').html($(this).val())">
+      <input name='target_treshhold' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange4" onInput="$('#rangeval4').html($(this).val())">
       <span id="rangeval4"><!-- Default value --></span>
     </div>
   </div>
@@ -84,8 +91,8 @@
     <br>
     <div class="row">
       <div class="col-sm-4">
-        <label for="customRange3" class="form-label"># of SL runs:</label>
-        <input name='iterate' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange3" onInput="$('#rangeval2').html($(this).val())">
+        <h6># of SL runs:</h6>
+        <input name='number_of_executions' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange3" onInput="$('#rangeval2').html($(this).val())">
         <span id="rangeval2"><!-- Default value --></span>
       </div>
 
@@ -102,8 +109,8 @@
     </div>
 
     <div class="col-sm-4" id="sigma">
-      <label for="customRange5" class="form-label">sigma factor:</label>
-      <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8" step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
+      <label for="customRange5" class="form-label">σ factor:</label>
+      <input name='sigma_factor' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8" step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
       <span id="rangeval5"><!-- Default value --></span>
     </div>
   </div>

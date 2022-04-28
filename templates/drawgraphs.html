@@ -12,12 +12,16 @@
   </nav>
 
 <br><br>
-
+<div class="mt-4">
     {% for key, value in figs.items() %}
 		<h2 align='center'>{{key}}</h2>
 		<div style="display: flex; justify-content: center;">
         <img src="data:image/png;base64, {{value}}" align='center'>
 		</div>
 	{% endfor %}
+
+</div>
+
+
 </main>
 {% endblock %}

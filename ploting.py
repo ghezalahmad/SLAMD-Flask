@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import plotly.express as px
-
+from heatmap import heatmap, corrplot
 
 def gpr_graph():
     from io import BytesIO
@@ -114,8 +114,10 @@ def plot_histsmooth(ds, columns):
 def plot_correlations(ds, corr, corrcat):
     sns.set()
     plt.gcf().clear()
-    if corrcat != '': sns.pairplot(ds[corr], hue = corrcat)
-    else: sns.pairplot(ds[corr])
+    if corrcat != '':
+        sns.pairplot(ds[corr], hue = corrcat)
+    else:
+        sns.pairplot(ds[corr])
     from io import BytesIO
     figfile = BytesIO()
     plt.savefig(figfile, format='png')
@@ -139,7 +141,7 @@ def plot_boxplot(ds, cat, num):
     figdata_png = base64.b64encode(figfile.getvalue())
     return figdata_png
 
-def plot_scatter(ds, x, y):
-    fig = px.scatter(x, y, marginal_x='histogram', marginal_y='rug')
+def plot_scatter(ds, x_axis, y_axis, hue, size):
+    fig = sns.scatterplot(data=ds, x=x_axis, y=y_axis, hue=hue, style=size)
     fig = fig.show()
     return fig

@@ -3,16 +3,22 @@ import os
 import pandas as pd
 import numpy as np
 #import models as algorithms
-import discovery as algorithms
+#import discovery as algorithms
 import ploting as plotfun
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from io import BytesIO
 from flask_bootstrap import Bootstrap
 from slamd import *
+from material_discovery import *
+
+
+
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 bootstrap = Bootstrap(app)
+
+
 
 def datasetList():
     datasets = [x.split('.')[0] for f in ['datasets', 'preprocessed'] for x in os.listdir(f)]
@@ -64,80 +70,18 @@ def datasets():
 @app.route('/datasets/<dataset>')
 def dataset(description = None, head = None, dataset = None):
     df = loadDataset(dataset)
+    head_df = pd.DataFrame(df)
     try:
         description = df.describe().round(2)
-        head = df.head(5)
+        #head = df.head(5)
+        des = head_df.describe().round(2)
+
     except: pass
-    return render_template('dataset.html',
-                           description = description.to_html(classes='table table-striped table-hover card-body'),
-                           head = head.to_html(index=False, classes='table table-striped table-hover'),
-                           dataset = dataset)
-
-@app.route('/datasets/<dataset>/models')
-def models(dataset = dataset):
-    columns = loadColumns(dataset)
-    clfmodels = algorithms.classificationModels()
-    #predmodels = algorithms.regressionModels()
-    return render_template('models.html', dataset = dataset,
-                           clfmodels = clfmodels,
-                           #predmodels = predmodels,
-                           columns = columns)
+    return render_template('dataset.html', head_df=head_df, des = des, dataset=dataset)
 
 
-@app.route('/datasets/<dataset>/modelprocess/', methods=['POST'])
-def model_process(dataset = dataset):
-    algscore = request.form.get('model')
-    res = request.form.get('response')
-    strategy = request.form.get('strategies')
-    variables = request.form.getlist('variables')
-
-    df = loadDataset(dataset)
-    y = df[str(res)]
-    print(y)
-
-    if variables != [] and '' not in variables: df = df[list(set(variables + [res]))]
-    X = df.drop(str(res), axis=1)
-    try: X = pd.get_dummies(X)
-    except: pass
-
-    predictors = X.columns
-    if len(predictors)>10: pred = str(len(predictors))
-    else: pred = ', '.join(predictors)
-
-    from sklearn.gaussian_process import GaussianProcessRegressor
-    from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
-    from sklearn import preprocessing
-
-    kernel = C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
-    gpr = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=9)
-    gpr.fit(X, y)
-    Expected_Pred, Uncertainty= gpr.predict(X, return_std=True)
-    y_samples = gpr.sample_y(X, n_samples=5)
-    print('y_samples', y_samples)
-    Expected_Pred = pd.DataFrame(Expected_Pred.squeeze())
-    Uncertainty = pd.DataFrame(Uncertainty.squeeze())
-
-    ep = Expected_Pred.set_axis(['Prediction'], axis=1)
-    un = Uncertainty.set_axis(['Uncertainty'], axis=1)
-    var_data = pd.concat([X, y], axis=1)
-    pre_data = pd.concat([un, ep], axis=1)
-    all_data = pd.concat([var_data, pre_data], axis=1)
-    ser = Expected_Pred + Uncertainty
-    # Normalize the utility
-    # train expected
-    if strategy == 'MLI (exploit)':
-        scaler = preprocessing.StandardScaler().fit(ser)
-        ser_scaled = scaler.transform(ser)
-        pdscaled = pd.DataFrame(data=ser_scaled)
-        pdscaled = pdscaled.set_axis(['Utility'], axis=1)
-        print(type(ser_scaled))
-    fig = plotfun.gpr_graph()
-    all_data = pd.concat([all_data, pdscaled], axis=1)
-    all_data = all_data.head(10)
 
 
-    return render_template('scores.html', dataset = dataset, algscore=algscore, res = res, gpr=gpr,
-         all_data=all_data.to_html(classes='table table-striped table-hover card-body'), fig=fig)
     #,   #kfold = kfold, response = str(fig, 'utf-8'))
 
 @app.route('/datasets/<dataset>/preprocessing')
@@ -198,30 +142,33 @@ def graphs(dataset = dataset):
 
 @app.route('/datasets/<dataset>/graphprocess/', methods=['POST'])
 def graph_process(dataset = dataset):
-    histogram = request.form.getlist('histogram')
-    boxplotcat = request.form.get('boxplotcat')
-    boxplotnum = request.form.get('boxplotnum')
-    corr = request.form.getlist('corr')
-    corrcat = request.form.get('corrcat')
-    scatter = request.form.getlist('scatter1')
-    scat = request.form.getlist('scatter2')
-    print(histogram)
-    if corrcat != '': corr += [corrcat]
+    x_axis = request.form.get('x_axis')
+    y_axis = request.form.get('y_axis')
+    hue = request.form.get('hue')
+    size = request.form.getlist('size')
+    scatter = request.form.get('sc')
+    scatter_matrix = request.form.get('sm')
+    heatmap = request.form.get('hm')
+    attribute_feature = request.form.getlist('attribute_feature')
+    #scat = request.form.getlist('scatter2')
+
+    #print(histogram)
+    #if corrcat != '': corr += [corrcat]
     ds = loadDataset(dataset)
+    columns = loadColumns(dataset)
     import ploting as plotfun
     figs = {}
-    if histogram != [''] and histogram != []:
-        figs['Histograms'] = str(plotfun.plot_histsmooth(ds, histogram), 'utf-8')
+    #if histogram != ['']:
+    #    figs['Histograms'] = str(plotfun.plot_histsmooth(ds, histogram), 'utf-8')
+    if scatter !=['']:
+        figs['Scatter'] = str(plotfun.plot_scatter(ds, x_axis, y_axis, hue, size), 'utf-8')
+
     if corr != [''] and corr != []:
         figs['Correlations'] = str(plotfun.plot_correlations(ds, corr, corrcat), 'utf-8')
     if boxplotcat != '' and boxplotnum != '':
         figs['Box Plot'] = str(plotfun.plot_boxplot(ds, boxplotcat, boxplotnum), 'utf-8')
 
-    if scatter != [''] and scat !=[]:
-        figs['scatter'] = (plotfun.plot_scatter(ds, scatter, scat), 'utf-8')
     if figs == {}: return redirect('/datasets/' + dataset + '/graphs')
-
-
     return render_template('drawgraphs.html', figs = figs, dataset = dataset)
 
 
@@ -349,12 +296,69 @@ def sequential_process(dataset=dataset):
         print('Select a model')
     """
 
-    return render_template('sequential.html', s=s)
+    return render_template('sequential.html', s=s, dataset=dataset)
 
 ################### SEQUENCIAL LEARNING ###############################3####
+@app.route('/datasets/<dataset>/models')
+def models(dataset = dataset):
+    columns = loadColumns(dataset)
+    #clfmodels = algorithms.classificationModels()
+    #predmodels = algorithms.regressionModels()
+    return render_template('models.html', dataset = dataset, columns = columns)
+
+@app.route('/datasets/<dataset>/modelprocess/', methods=['POST'])
+def model_process(dataset = dataset):
+    model = request.form.get('models')
+    target_df = request.form.getlist('targets')
+    feature_df = request.form.getlist('feature_df')
+    fixed_target_df = request.form.getlist('fixedtargets')
+    strategy = request.form.get('strategies')
+    #distance = request.form.get('initial_sample')
+    sigma = float(request.form.get('sigma_factor'))
+
+    dataframe = loadDataset(dataset)
+
+# --- This is the min_max of benchmarking ---------
+    min_or_max_target = {}
+    for t in target_df:
+        x = 'Rd_'+t
+        min_or_max_target[t]= request.form.get(x)
+
+    target_selected_number2 = {}
+    for t in target_df:
+        x = 'Nd_'+t
+        target_selected_number2[t]= int(request.form.get(x))
+#---------------------------------
+    min_or_max_fixedtarget = {}
+    for t in fixed_target_df:
+        x = 'Rd1_'+t
+        min_or_max_fixedtarget[t]= request.form.get(x)
+
+
+    fixedtarget_selected_number2 = {}
+    for t in fixed_target_df:
+        x = 'Nd1_'+t
+        fixedtarget_selected_number2[t]= int(request.form.get(x))
+# ------------------------------------------------
+
+    l = learn(dataframe, model, target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2, fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
+    l.start_learning()
+    n = l.start_learning()
+    m = n
+    df_table = pd.DataFrame(n)
+    df_column = df_table.columns
+    #df_table2 = df_table1[1:]
+    print(df_column)
+    df_only_data = df_table
+    print('new_df', df_only_data)
 
 
 
+
+
+    return render_template('scores.html', dataset=dataset, m=m,df_column=df_column, df_only_data=df_only_data, n=n.to_html(index=False, classes='table table-striped table-hover table-responsive', escape=False))
+
+################### SEQUENCIAL LEARNING ###############################3####
 @app.route('/datasets/<dataset>/tutorial')
 def tutorial():
     return render_template('tutorial.html')

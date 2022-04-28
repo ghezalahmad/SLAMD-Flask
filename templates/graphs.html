@@ -16,9 +16,97 @@
 
 <form class="form-models" method="post" action='/datasets/{{dataset}}/graphprocess/'>
 
+  <div class="row">
+    <div class="col-sm">
+      <h7>Select Plot:</h7>
+        <select name="plot" id='plot_selection' class="form-control" >
+          <option hidden>Select Plots</option>
+        <!--  <option value="ht">Histogram</option> -->
+          <option value="sc">Scatter </option>
+          <option value="sm">Scatter Matrix</option>
+          <option value="hm">Heatmap Matrix</option>
+        </select>
+    </div>
+  </div>
+  <br>
+
+  <div class='row' id='attribute_selection_scatter'>
+    <div class="row">
+      <div class="col-sm-1">
+          X-Axis:
+      </div>
+      <div class="col-sm-3">
+        <select name="x_axis" class="form-control">
+            <option value=""></option>
+               {% for mod in columns %}
+                  <option value="{{mod}}">{{mod}}</option>
+               {% endfor %}
+        </select><br>
+      </div>
+
+      <div class="col-sm-1">
+          Y-Axis:
+      </div>
+      <div class="col-sm-3">
+        <select name="y_axis" class="form-control">
+            <option value=""></option>
+               {% for mod in columns %}
+                  <option value="{{mod}}">{{mod}}</option>
+               {% endfor %}
+        </select><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-1">
+          Hue:
+      </div>
+      <div class="col-sm-3">
+        <select name="hue" class="form-control">
+            <option value=""></option>
+               {% for mod in columns %}
+                  <option value="{{mod}}">{{mod}}</option>
+               {% endfor %}
+        </select><br>
+      </div>
+
+      <div class="col-sm-1">
+          Size:
+      </div>
+      <div class="col-sm-3">
+        <select name="size" class="form-control">
+            <option value=""></option>
+               {% for mod in columns %}
+                  <option value="{{mod}}">{{mod}}</option>
+               {% endfor %}
+        </select><br>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='row' id='attribute_selection'>
+    <div class="row">
+      <div class="col-sm-1">
+          Feature Size:
+      </div>
+      <div class="col-sm-3">
+        <select multiple name="attribute_feature" class="form-control">
+            <option value=""></option>
+               {% for mod in columns %}
+                  <option value="{{mod}}">{{mod}}</option>
+               {% endfor %}
+        </select><br>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
 <!-- histogram plot -->
-
+<!--
 <div class="row">
   <div class="col-sm-4">
     <h5>Histogram:</h5>
@@ -30,33 +118,15 @@
 		        {% endfor %}
 	   </select>
 	</div>
-
+-->
 <!-- Scatter plot -->
-
-  <div class="col-sm">
-    <h5>Scatter:</h5>
-	  <label for="y_selection">Select variable</label>
-	   <select name="y" class="form-control">
-		     <option value=""></option>
-            {% for mod in columns %}
-			         <option value="{{mod}}">{{mod}}</option>
-		        {% endfor %}
-	   </select>
-
-     <label for="x_selection">Select variable</label>
- 	   <select name="x" class="form-control">
- 		     <option value=""></option>
-             {% for mod in columns %}
- 			         <option value="{{mod}}">{{mod}}</option>
- 		        {% endfor %}
- 	   </select>
-	</div>
-  <br>
 
 
 <!-- line plot -->
 
 <!-- scatter plot -->
+
+<!--
   <div class="col-sm-4">
     <h5>BoxPlot:</h5>
 	  <label for="boxplotselect">Variable 1:</label>
@@ -74,9 +144,13 @@
 		          {% endfor %}
 	      </select>
 	</div>
+ -->
+
 <!-- Correlation plot -->
+
+<!--
   <div class="col-sm-4">
-    <h5>Correlation Plots:</h5>
+    <h5>Scatter Matrix:</h5>
 	  <label for="corelationplot">Select variables:</label>
       <select multiple name="corr" class="form-control">
 		      <option value=""></option>
@@ -94,11 +168,48 @@
 		          {% endfor %}
       </select>
   </div>
-</div>
 
+ -->
 <br>
   <button class="btn  btn-warning btn-block" type="submit">Show Graphs</button>
 </form>
+
+
+<script>
+
+  $(document).ready(function(){
+  //  $("#sub_option").show();
+      $('#attribute_selection').hide();
+      $('#attribute_selection_scatter').hide();
+
+  });
+
+  $("#plot_selection").change(function(){
+    var abc = $('#plot_selection').val();
+    if (abc == 'sc'){
+      $('#attribute_selection_scatter').show();
+      $('#attribute_selection').hide();
+    } else if (abc == 'sm'){
+      $('#attribute_selection').show();
+      $('#attribute_selection_scatter').hide();
+    } else if (abc == 'hm'){
+      $('#attribute_selection').show();
+      $('#attribute_selection_scatter').hide();
+    } else {
+      alert('select a option');
+    }
+
+  });
+
+</script>
+
+
+
+
+
+
+
+
 
 
 </main>

@@ -20,14 +20,14 @@
 <!-- Model part -->
 <div class="row">
   <div class="col-sm">
-    <h6>Models</h6>
-    <select name="model" class="form-control">
-		    <optgroup label="Classification">
-          {% for mod in clfmodels %}
-			  <option value="{{mod}}.Classification">{{mod}}</option>
-		      {% endfor %}
-		    </optgroup>
-    </select>
+    <h7>Models:</h7>
+      <select name="models" class="form-control" >
+        <option hidden>Select Model</option>
+        <option value="Gaussian Process Regression (GPR)">Gaussian Process Regression (GPR)</option>
+        <option value="lolo Random Forrest (RF)">lolo Random Forrest (RF)</option>
+        <option value="Decision Trees (DT)">Decision Trees (DT)</option>
+        <option value="Random Forrest (RFscikit)">Random Forrest (RFscikit)</option>
+      </select>
   </div>
 </div>
 <br>
@@ -40,8 +40,8 @@
 <!-- ------------------------------------------------------------------------------- -->
 <div class="row">
   <div class="col-sm-4">
-    <h6>input Features:</h6>
-     <select multiple id="dm_feature" name="variables" class="form-control" required>
+    <h6>Materials Data (Input):</h6>
+     <select multiple id="dm_feature" name="feature_df" class="form-control" required>
         <option value=""></option>
           {% for col in columns %}
             <option value="{{col}}">{{col}}</option>
@@ -50,25 +50,26 @@
   </div>
 
   <div class="col-sm-4">
-    <h6>Target Variable:</h6>
-      <select multiple id="dm_target" name="response" class="form-control" required>
+    <h6>Target Properties:</h6>
+      <select multiple id="dm_target" name="targets" class="form-control" required>
       </select>
   </div>
   <div class="col-sm-4">
-    <h6>Fixed Target:</h6>
-      <select multiple id="dm_fixedtargets" name="fixedtargets" class="form-control" required>
+    <h6>A-priori Information:</h6>
+      <select multiple id="dm_fixedtargets" name="fixedtargets" class="form-control">
 
       </select>
   </div>
 </div>
 <br>
 
-<div class="row" id="sub_option">
-  <div class="col-sm-4" id="sub_option2">
+<div class="row" id="sub_option_md">
+  <br>
+  <div class="col-sm-4" id="sub_option2_md">
   </div>
 </div>
-<div class="row" id="sub2_option">
-  <div class="col-sm-4" id="sub2_option2">
+<div class="row" id="sub2_option_md">
+  <div class="col-sm-4" id="sub2_option2_md">
   </div>
 </div>
 <!-- ------------------------------------------------------------------------------- -->
@@ -80,13 +81,13 @@
     <select id="strategy" name="strategies" class="form-control">
       <option hidden>Select Strategy</option>
       <option value="MEI (exploit)">MEI (exploit)</option>
-      <option value="MLI (exploit & explore)">MLI (exploit & explore)</option>
+      <option value="MLI (explore & exploit)">MLI (explore & exploit)</option>
     </select>
 </div>
 
 <div class="col-sm-4" id="sigma">
-  <label for="customRange5" class="form-label">sigma factor:</label>
-  <input name='initial_sample' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8" step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
+  <label for="customRange5" class="form-label"> σ Factor:</label>
+  <input name='sigma_factor' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8" step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
   <span id="rangeval5"><!-- Default value --></span>
 </div>
 </div>
@@ -101,7 +102,7 @@ $("#strategy").change(function(){
     //alert('hello');
     //$document.getElementByID('first').show();
     $('#sigma').hide();
-  } else if (abc == 'MLI (exploit & explore)'){
+  } else if (abc == 'MLI (explore & exploit)'){
     $('#sigma').show();
   } else {
     alert('select a option');
@@ -137,7 +138,7 @@ $('#dm_target').change(function(){
   });
 
   var3 = $('#dm_target').val().length;
-  $('#sub_option').empty();
+  $('#sub_option_md').empty();
   for (i=0; i< var3; i++) {
 
   //console.log($('#sigma2').val());
@@ -145,50 +146,50 @@ $('#dm_target').change(function(){
     arr = $('#dm_target').val();
 
 //$('#sub_option').text($('#sigma2').val());
-    $('#sub_option').append(`
-      <div class="col-sm-1">
+    $('#sub_option_md').append(`
+      <div class="col-sm-3">
       <label for=${arr[i]}>${arr[i]}</label>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-3">
       <label for=${arr[i]}>minimize</label>
 
-      <input type="radio" name='"R_+${arr[i]}"' value="minimize"></input></br>
+      <input type="radio" name="Rd_${arr[i]}" value="min"></input></br>
       <label for=${arr[i]}>maximize</label>
-      <input type="radio" name="R_'+${arr[i]}+'" value="maximize"></input>
+      <input type="radio" name="Rd_${arr[i]}" value="max"></input>
       </div>
 
-      <div class="col-sm-1">
+      <div class="col-sm-3">
       <label for=${arr[i]}> Weight ${arr[i]}</label>
       </div>
-      <div class="col-sm-2">
-      <input type="number" name="N2_${arr[i]}" step="1"> </input>
+      <div class="col-sm-3">
+      <input type="number" name="Nd_${arr[i]}" step="1" value='1'> </input>
       </div> </br>`);
-  };
-
-
+    };
+});
+$('#dm_fixedtargets').change(function(){
   priori = $('#dm_fixedtargets').val().length;
-  $('#sub2_option').empty();
+  $('#sub2_option_md').empty();
   for (j=0; j< priori; j++) {
     arr2 = $('#dm_fixedtargets').val();
-    $('#sub2_option').append(`
-      <div class="col-sm-1">
+    $('#sub2_option_md').append(`
+      <div class="col-sm-3">
       <label for=${arr2[j]}>${arr2[j]}</label>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-3">
       <label for=${arr2[j]}>minimize</label>
 
-      <input type="radio" name='"R_+${arr2[j]}"' value="minimize"></input></br>
+      <input type="radio" name="Rd1_${arr2[j]}" value="minimize"></input></br>
       <label for=${arr2[j]}>maximize</label>
-      <input type="radio" name="R_'+${arr2[j]}+'" value="maximize"></input>
+      <input type="radio" name="Rd1_${arr2[j]}" value="maximize"></input>
       </div>
 
-      <div class="col-sm-1">
+      <div class="col-sm-3">
       <label for=${arr2[j]}> Weight ${arr2[j]}</label>
       </div>
-      <div class="col-sm-2">
-      <input type="number" name="N2_${arr2[j]}" step="1"> </input>
+      <div class="col-sm-3">
+      <input type="number" name="Nd1_${arr2[j]}" step="1" value='1'> </input>
       </div> </br>`);
-  };
+    };
 });
 
 </script>

@@ -60,6 +60,13 @@
       <h6>Batch Size</h6>
       <input name='batch_size' type="number" class="form-control" min="1" max="100" >
     </div>
+
+    <div class="col-sm-8">
+      <label for="tquantile" class="form-label">Target quantile:</label>
+      <input name='tquantile' type="range" class="form-range form-range-thumb-width" min="1" max="100"  onInput="$('#rangeval6').html($(this).val())">
+      <span id="rangeval6"><!-- Default value --></span>
+    </div>
+
   </div>
 <br>
   <div class="row">

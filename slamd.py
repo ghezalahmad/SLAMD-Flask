@@ -18,20 +18,20 @@ from app import *
 
 def extend(list_of_2dms_arrays_to_extend):
     np_array=np.array(list_of_2dms_arrays_to_extend, dtype=object)
-    print('np_array', np_array)
+    #print('np_array', np_array)
     max_cols=max(map(len,np_array))
-    print('max_cols', max_cols)
+    #print('max_cols', max_cols)
     result_list=[]
     for i in np_array:
         if(len(i) == max_cols):
             result_list.append(i)
         elif (len(i) != max_cols):
             how_often=max_cols-len(i)
-            print('how_often', how_often)
+            #print('how_often', how_often)
             matrix_to_extend=np.tile(i[:][-1], (how_often, 1))
-            print('i', i)
-            print('matrix', matrix_to_extend.shape)
-            print(matrix_to_extend)
+            #print('i', i)
+            #print('matrix', matrix_to_extend.shape)
+            #print(matrix_to_extend)
             i=np.concatenate([i, matrix_to_extend])
             result_list.append(i)
     return result_list
@@ -61,7 +61,7 @@ class sequential_learning:
     def __init__(self,dataframe,initial_sample_size,batch_size, target_treshhold, number_of_executions,
              sigma, dist, model, strategy, target_df, fixed_targets_idx, feature_df, min_or_max_target, check_to_use_threshold_t,
              target_selected_number1,target_selected_number2, min_or_max_fixedtarget, check_to_use_threshold_ft,
-             fixedtarget_selected_number1, fixedtarget_selected_number2):  #constructor
+             fixedtarget_selected_number1, fixedtarget_selected_number2, tquantile):  #constructor
 
         self.dataframe= dataframe
         self.features_df = feature_df
@@ -85,6 +85,7 @@ class sequential_learning:
         self.check_to_use_threshold_ft = check_to_use_threshold_ft
         self.fixedtarget_selected_number1 = fixedtarget_selected_number1
         self.fixedtarget_selected_number2 = fixedtarget_selected_number2
+        self.tquantile = tquantile/100
 
         #print(self.dataframe[self.targets_idx])
     def apply_feature_selection_to_df(self,dataframe):
@@ -123,7 +124,7 @@ class sequential_learning:
 
             if not(len(checked_targets)==len(self.check_to_use_threshold_t)+len(self.check_to_use_threshold_ft)):
                 sum_without_checked_targets=df.drop(columns=checked_targets).sum(axis=1)
-                targ_q = (self.target_treshhold/100)
+                targ_q = (self.tquantile/100)
                 targ_q_t= np.quantile(sum_without_checked_targets.iloc[treshholded_idx], 0.5)
                 #targ_q_t= sum_without_checked_targets.iloc[treshholded_idx].quantile(1)
                 tempIndex=np.where(sum_without_checked_targets.iloc[treshholded_idx] >= targ_q_t )
@@ -135,7 +136,7 @@ class sequential_learning:
                 Index_c=treshholded_idx
                 Index_samp=np.delete(sum_.index, treshholded_idx)
         else:
-            targ_q = quantile_tar_slider.value/100
+            targ_q = self.tquantile/100
             targ_q_t= sum_.quantile(targ_q)
             Index_samp=np.where(sum_ < targ_q_t )
             Index_samp=Index_samp[0]
@@ -177,9 +178,9 @@ class sequential_learning:
         init_sample_set=self.init_sampling()
         fixed_targets_index=self.fixed_targets_idx
 
-        sum_ = self.dataframe[self.min_or_max_target].sum(axis=1).to_frame()+self.dataframe[fixed_targets_index].sum(axis=1).to_frame()
+        sum_ = self.dataframe[self.targets_idx].sum(axis=1).to_frame()+self.dataframe[fixed_targets_index].sum(axis=1).to_frame()
 
-        targ_q_t= sum_.quantile(self.target_treshhold)
+        targ_q_t= sum_.quantile(self.tquantile)
         schwellwert=sum_.quantile(self.target_treshhold)
         Index_c=np.where(sum_ >= schwellwert )
         Index_c=Index_c[0]
@@ -195,7 +196,7 @@ class sequential_learning:
             #self.init_sample_size
             distance=distance_matrix(self.dataframe.iloc[self.SampIdx],self.dataframe.iloc[self.treshIdx])
             distance=distance.min()
-            print("distance",distance)
+            #print("distance",distance)
             current_distances_list=[distance]
             #max value summe
             targt_perf=sum_.loc[self.SampIdx].max().item()
@@ -210,14 +211,14 @@ class sequential_learning:
 
                 batch_size=self.batch_size
                 for batch in range(batch_size):
-                    print('samp check', self.SampIdx.size)
-                    print('batch check', self.treshIdx)
+                    #print('samp check', self.SampIdx.size)
+                    #print('batch check', self.treshIdx)
                     if(self.SampIdx.size<batch_size):
 
                         batch_size=self.SampIdx.size
                         self.update_strategy(self.strategy)
                     else:
-                        print('to check while lloop 2')
+                        #print('to check while lloop 2')
                         self.update_strategy(self.strategy)
                         #Train Model
                 self.decide_model(self.model)
@@ -258,7 +259,7 @@ class sequential_learning:
             axs[1].set_title('Optimization progress in output space')
             axs[1].set_xlabel('development cycles')
             axs[1].set_ylabel("Maximum sampled property")
-            axs[1].axhline(y=targ_q_t.values, color='k', linestyle=':',label='Target (normalized)')
+            axs[1].axhline(y=self.tquantile, color='k', linestyle=':',label='Target (normalized)')
             axs[1].legend()
             #Plotting
             for runs in range(len(distances)):
@@ -269,7 +270,7 @@ class sequential_learning:
 
                 #with out_perform_experiment:
                 #out_perform_experiment.clear_output(wait=True)
-            time.sleep(1.0)
+            #time.sleep(1.0)
             fig2=plt.figure(figsize=(15, 5))
             plt.xlabel('Number of required Experiments')
             plt.ylabel("Frequency")
@@ -316,7 +317,7 @@ class sequential_learning:
         if(len(mean_performances)>=10):
             perform_after_5=mean_performances[4]
             perform_after_10=mean_performances[9]
-            print(perform_after_10/max_performance)
+            #print(perform_after_10/max_performance)
             rel_perform_after_5=(perform_after_5-min_performance)/(max_performance-min_performance)
             rel_perform_after_10=(perform_after_10-min_performance)/(max_performance-min_performance)
 
@@ -366,18 +367,19 @@ class sequential_learning:
             fig3,axs_fixed = plt.subplots(anzahl_plots,figsize=(8,5*anzahl_plots),squeeze=False)
             axs_fixed=axs_fixed.flatten()
 
-            #fixed_targets_extended=extend(fixed_targets)
-            #mean_fixed_targets_extended=np.mean(fixed_targets_extended, axis=0)
-            #fixed_rand_extended=extend(self.rand_fixed_tars)
-            #mean_fixed_rand_extended=np.mean(fixed_rand_extended, axis=0)
+            fixed_targets_extended=extend(fixed_targets)
+            mean_fixed_targets_extended=np.mean(fixed_targets_extended, axis=0)
+            #print('fixed_exted', fixed_targets_extended)
+            fixed_rand_extended=extend(self.rand_fixed_tars)
+            mean_fixed_rand_extended=np.mean(fixed_rand_extended, axis=0)
 
 #Plot fixed targets
-            """
+            """ """
             for fixed_target in range(anzahl_plots):
                 axs_fixed[fixed_target].set_title('Optimization progress for %s'%(self.fixed_targets_idx[fixed_target]))
                 axs_fixed[fixed_target].set_xlabel('development cycles')
                 axs_fixed[fixed_target].set_ylabel("Best sampled property")
-                #axs_fixed[fixed_target].set_xlim([0,len(mean_fixed_targets_extended[:,0])-1])
+                axs_fixed[fixed_target].set_xlim([0,len(mean_fixed_targets_extended[:,0])-1])
 
             for one_tar in range(anzahl_plots):
                 axs_fixed[one_tar].plot(mean_fixed_targets_extended[:,one_tar],linewidth=8, alpha=0.9, color='k',label='With optimization')
@@ -388,25 +390,26 @@ class sequential_learning:
             for sl_run in range(len(fixed_targets)):
                 for one_tar in range(anzahl_plots):
                     axs_fixed[one_tar].plot(fixed_targets[sl_run][:,one_tar],linewidth=2, alpha=0.1,color='k')
-            """
+
         #with out_results_SL:
         #display(Markdown(" "))
         #display(Markdown('#### Result plots:'))
 
         anzahl_plots=len(self.targets_idx)
+        fig4,axs_pred = plt.subplots(anzahl_plots,figsize=(8,5*anzahl_plots), squeeze=False)
+        axs_pred=axs_pred.flatten()
 
-
-        #targets_extended=extend(self.targets_idx)
+        targets_extended=extend(targets)
         #print('type', targets_extended)
         #xlist = [float(i) for i in targets_extended]
-        #mean_targets_extended=np.mean(xlist,axis=0)
-        #fig4,axs_pred = plt.subplots(anzahl_plots,figsize=(8,5*anzahl_plots), squeeze=False)
+        mean_targets_extended=np.mean(targets_extended,axis=0)
 
-        #plt.setp(axs_pred, xlim=[0,len(mean_targets_extended[:,0])-1])
-        #axs_pred=axs_pred.flatten()
-        #rand_extended=extend(self.rand_tars)
-        #mean_rand_extended=np.mean(rand_extended,axis=0)
-        """
+
+        plt.setp(axs_pred, xlim=[0,len(mean_targets_extended[:,0])-1])
+
+        rand_extended=extend(self.rand_tars)
+        mean_rand_extended=np.mean(rand_extended,axis=0)
+        """ """
         for pred_target in range(anzahl_plots):
             axs_pred[pred_target].set_title('Optimization progress for %s'%(self.targets_idx[pred_target]))
             axs_pred[pred_target].set_xlabel('development cycles')
@@ -421,12 +424,12 @@ class sequential_learning:
         for sl_run in range(len(targets)):
             for one_tar in range(anzahl_plots):
                 axs_pred[one_tar].plot(targets[sl_run][:,one_tar],linewidth=2, alpha=0.1,color='k')
-        """
+
         plt.show()
 
 
     def perform_random_pick(self,acutal_iter):
-        print("self.dataframe sollte min max hjaben")
+        #print("self.dataframe sollte min max hjaben")
         #print(self.dataframe)
         sum_ = self.dataframe[self.targets_idx].sum(axis=1).to_frame()+self.dataframe[self.fixed_targets_idx].sum(axis=1).to_frame()
         index_sum=sum_.index.to_numpy()
@@ -487,7 +490,7 @@ class sequential_learning:
 
 
     def updateIndexMEI(self):
-        print('fixed',self.dataframe[self.fixed_targets_idx].iloc[self.PredIdx])
+        #print('fixed',self.dataframe[self.fixed_targets_idx].iloc[self.PredIdx])
         fixed_targets_in_prediction=self.dataframe[self.fixed_targets_idx].iloc[self.PredIdx].to_numpy()
         if(len(self.fixed_targets_idx)>0):
             for weights in range(len(fixedtarget_selected_number2)):
@@ -675,7 +678,7 @@ class sequential_learning:
                 fixed_targets = pd.DataFrame(fixed_targets)
                 df = pd.concat([targets,  fixed_targets], axis=1)
                 sum_without_checked_targets=df#.sum(axis=1)
-                targ_q = self.target_treshhold #quantile_tar_slider.value/100
+                targ_q = self.target_treshhold #.value/100
                 targ_q_t= sum_without_checked_targets.iloc[treshholded_idx].quantile(targ_q)
                 tempIndex=np.where(sum_without_checked_targets.iloc[treshholded_idx] >= targ_q_t )
                 tempIndex=tempIndex[0]
@@ -689,7 +692,7 @@ class sequential_learning:
 
 
         elif(not treshholded_idx):
-            targ_q = quantile_tar_slider.value/100
+            targ_q = self.tquantile/100
             targ_q_t= sum_.quantile(targ_q)
             Index_samp=np.where(sum_ < targ_q_t )
             Index_samp=Index_samp[0]
@@ -725,7 +728,7 @@ class sequential_learning:
                 sc=plt.scatter(x=tsne_results[:,0],y=tsne_results[:,1], c=sum_,
                                    cmap=cmap, vmax=vmax)
             else:
-                targ_q = quantile_tar_slider.value/100
+                targ_q = self.tquantile/100
                 targ_q_t= sum_.quantile(targ_q)
 
                 Index_samp=np.where(sum_ < targ_q_t )
@@ -819,7 +822,7 @@ class sequential_learning:
         with out_input_space:
             display(Markdown('Target data'))
             if df is not None:
-                targ_q = quantile_tar_slider.value/100
+                targ_q = self.tquantile/100
                 target_df=decide_max_or_min(box_targets,self.targets_idx,target_df)
                 fixed_target_df=decide_max_or_min(box_fixed_targets,self.fixed_targets_idx,fixed_target_df)
 
@@ -844,9 +847,10 @@ class sequential_learning:
             self.target_df=self.dataframe[self.targets_idx].join(self.dataframe[(self.fixed_targets_idx)])
         self.standardize_data()
         init_sample_set=self.init_sampling()
-        quantile_tar_slider = 10
-        #targ_q = quantile_tar_slider.value/100
-        targ_q = quantile_tar_slider/100
+
+        #quantile_tar_slider = 10
+        #targ_q = self.tquantile/100
+        targ_q = self.tquantile/100
 
         treshholded_idx= self.check_input_variables()
         features_df, target_df, fixed_target_df, df_unnorm, df=self.load_data()

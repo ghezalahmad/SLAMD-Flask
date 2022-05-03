@@ -192,6 +192,8 @@ def sequential_process(dataset=dataset):
     target_df = request.form.getlist('targets')
     fixed_targets_idx = request.form.getlist('fixedtargets')
     feature_df = request.form.getlist('features')
+    tquantile = int(request.form.get('tquantile'))
+
 
 
 
@@ -276,7 +278,7 @@ def sequential_process(dataset=dataset):
     s = sequential_learning(dataframe,initial_sample_size,batch_size, target_treshhold, number_of_executions,
              sigma, dist, model, strategy, target_df, fixed_targets_idx, feature_df, min_or_max_target, check_to_use_threshold_t,
              target_selected_number1,target_selected_number2, min_or_max_fixedtarget, check_to_use_threshold_ft,
-             fixedtarget_selected_number1, fixedtarget_selected_number2)
+             fixedtarget_selected_number1, fixedtarget_selected_number2, tquantile)
     s.main()
     """
     if model == "Decision Trees (DT)":

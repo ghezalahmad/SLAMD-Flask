@@ -121,6 +121,7 @@
       <span id="rangeval5"><!-- Default value --></span>
     </div>
   </div>
+
   <!-- ------------------------------------------------------------------------------- -->
   <br><br>
     <button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
@@ -204,22 +205,23 @@
           <div class="col-sm-2">
           <label for=${arr[i]}>minimize</label>
 
-          <input type="radio" name="R_${arr[i]}" value='min'></input></br>
+          <input type="radio" name="R_${arr[i]}" value='min'  id=${arr[i]}></input></br>
           <label for=${arr[i]}>maximize</label>
-          <input type="radio" name="R_${arr[i]}" value="max"></input>
+          <input type="radio" name="R_${arr[i]}" value="max"  id=${arr[i]}></input>
           </div>
 
           <div class="col-sm-3">
           <label for=${arr[i]}>Check to use Threshold</label>
-
-          <input type="checkbox" name="C_${arr[i]}" value=True></input>
+          <input type="checkbox" name="C_${arr[i]}" value=True  id=${arr[i]}></input>
           </div>
+
           <div class="col-sm-1">
           <label for=${arr[i]}>${arr[i]}</label>
           </div>
           <div class="col-sm-2">
           <input type="number" name="N1_${arr[i]}" step="1"> </input>
           </div>
+
           <div class="col-sm-1">
           <label for=${arr[i]}> Weight ${arr[i]} </label>
           </div>
@@ -242,7 +244,7 @@
           <div class="col-sm-2">
           <label for=${arr1[j]}>minimize</label>
 
-          <input type="radio" name="R1_${arr1[j]}" value="min"></input></br>
+          <input type="radio" name="R1_${arr1[j]}" value="min" id=${arr1[j]}></input></br>
           <label for=${arr1[j]}>maximize</label>
           <input type="radio" name='R1_${arr1[j]}' value="max"></input>
           </div>

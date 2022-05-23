@@ -224,9 +224,12 @@ class sequential_learning:
                 self.decide_model(self.model)
                 distance= distance_matrix(self.dataframe.iloc[self.SampIdx],self.dataframe.iloc[self.treshIdx])
                 distance=distance.min()
+
                 current_distances_list.append(distance)
                 targt_perf=sum_.loc[self.SampIdx].max().values.tolist()
                 targt_perf=max(targt_perf)
+
+
 
                 current_targt_perf_list.append(targt_perf)
                 max_targt_perf_index=np.argmax(sum_.loc[self.SampIdx].values, axis=0)
@@ -239,6 +242,7 @@ class sequential_learning:
                 self.tries_list[i]=self.tries_list[i]+1
 
             distances.append(current_distances_list)
+
             targt_perfs.append(current_targt_perf_list)
 
             best_value=self.dataframe.iloc[self.treshIdx]
@@ -286,6 +290,11 @@ class sequential_learning:
             #    display(Markdown('current iteration {}'.format(i)))
             #    display(Markdown(" "))
             print('current iteration {}'.format(i))
+            print('distance', distance)
+            print('targ_erf', targt_perf)
+            print('current_distances_list: ', current_distances_list)
+
+
 
                         #self.number_of_executions
     #Extend values of perfs

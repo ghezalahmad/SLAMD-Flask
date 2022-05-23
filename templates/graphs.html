@@ -19,12 +19,12 @@
   <div class="row">
     <div class="col-sm">
       <h7>Select Plot:</h7>
-        <select name="plot" id='plot_selection' class="form-control" >
+        <select name="plot_name" id='plot_selection' class="form-control" >
           <option hidden>Select Plots</option>
         <!--  <option value="ht">Histogram</option> -->
           <option value="sc">Scatter </option>
           <option value="sm">Scatter Matrix</option>
-          <option value="hm">Heatmap Matrix</option>
+          <option value="hm">Correlation Heatmap</option>
         </select>
     </div>
   </div>
@@ -37,24 +37,24 @@
       </div>
       <div class="col-sm-3">
         <select name="x_axis" class="form-control">
-            <option value=""></option>
+            <option hidden></option>
                {% for mod in columns %}
                   <option value="{{mod}}">{{mod}}</option>
                {% endfor %}
         </select><br>
       </div>
 
-      <div class="col-sm-1">
-          Y-Axis:
-      </div>
-      <div class="col-sm-3">
-        <select name="y_axis" class="form-control">
-            <option value=""></option>
-               {% for mod in columns %}
-                  <option value="{{mod}}">{{mod}}</option>
-               {% endfor %}
-        </select><br>
-      </div>
+    <div class="col-sm-1">
+      Y-Axis:
+    </div>
+    <div class="col-sm-3">
+      <select name="y_axis" class="form-control">
+        <option hidden></option>
+          {% for mod in columns %}
+            <option value="{{mod}}">{{mod}}</option>
+          {% endfor %}
+      </select><br>
+    </div>
     </div>
 
     <div class="row">
@@ -63,7 +63,7 @@
       </div>
       <div class="col-sm-3">
         <select name="hue" class="form-control">
-            <option value=""></option>
+            <option hidden></option>
                {% for mod in columns %}
                   <option value="{{mod}}">{{mod}}</option>
                {% endfor %}
@@ -75,7 +75,7 @@
       </div>
       <div class="col-sm-3">
         <select name="size" class="form-control">
-            <option value=""></option>
+            <option hidden></option>
                {% for mod in columns %}
                   <option value="{{mod}}">{{mod}}</option>
                {% endfor %}
@@ -92,7 +92,7 @@
       </div>
       <div class="col-sm-3">
         <select multiple name="attribute_feature" class="form-control">
-            <option value=""></option>
+            <option hidden></option>
                {% for mod in columns %}
                   <option value="{{mod}}">{{mod}}</option>
                {% endfor %}
@@ -100,76 +100,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-<!-- histogram plot -->
-<!--
-<div class="row">
-  <div class="col-sm-4">
-    <h5>Histogram:</h5>
-	  <label for="histogramselection">Select variables</label>
-	   <select multiple name="histogram" class="form-control">
-		     <option value=""></option>
-            {% for mod in columns %}
-			         <option value="{{mod}}">{{mod}}</option>
-		        {% endfor %}
-	   </select>
-	</div>
--->
-<!-- Scatter plot -->
-
-
-<!-- line plot -->
-
-<!-- scatter plot -->
-
-<!--
-  <div class="col-sm-4">
-    <h5>BoxPlot:</h5>
-	  <label for="boxplotselect">Variable 1:</label>
-	     <select name="boxplotcat" class="form-control"> Variable 1:
-		       <option value=""></option>
-              {% for mod in columns %}
-			           <option value="{{mod}}">{{mod}}</option>
-		          {% endfor %}
-	     </select><br>
-    <label for="variable2">Varable 2:</label>
-	     <select name="boxplotnum" class="form-control">
-		       <option value=""></option>
-              {% for mod in columns %}
-			           <option value="{{mod}}">{{mod}}</option>
-		          {% endfor %}
-	      </select>
-	</div>
- -->
-
-<!-- Correlation plot -->
-
-<!--
-  <div class="col-sm-4">
-    <h5>Scatter Matrix:</h5>
-	  <label for="corelationplot">Select variables:</label>
-      <select multiple name="corr" class="form-control">
-		      <option value=""></option>
-              {% for mod in columns %}
-			           <option value="{{mod}}">{{mod}}</option>
-		          {% endfor %}
-	     </select>
-    <br>
-    <label for="Categoricalvariable">	Categorical Variable (Variable in data to map plot aspects to different colors) OPTIONAL:</label>
-    <br>
-      <select name = "corrcat" class="form-control">
-		      <option value=""></option>
-              {% for mod in columns %}
-			           <option value="{{mod}}">{{mod}}</option>
-		          {% endfor %}
-      </select>
-  </div>
-
- -->
 <br>
   <button class="btn  btn-warning btn-block" type="submit">Show Graphs</button>
 </form>

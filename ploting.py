@@ -1,8 +1,11 @@
-import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import plotly.express as px
 from heatmap import heatmap, corrplot
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from bokeh.plotting import *
 
 def gpr_graph():
     from io import BytesIO
@@ -142,6 +145,57 @@ def plot_boxplot(ds, cat, num):
     return figdata_png
 
 def plot_scatter(ds, x_axis, y_axis, hue, size):
-    fig = sns.scatterplot(data=ds, x=x_axis, y=y_axis, hue=hue, style=size)
-    fig = fig.show()
-    return fig
+    sns.set()
+    plt.gcf().clear()
+    #out_plotting.clear_output()
+    #fig, ax = plt.subplots(figsize=(12,7))
+    #not generic
+    with sns.axes_style(style='ticks'):
+        sns.scatterplot(y=y_axis, x=x_axis, hue=hue, size=size, data=ds)
+    #ax.set_title(select_y.value+ "vs"+ select_x.value)
+    #ax.legend(loc="upper left", bbox_to_anchor=(1,1))
+    from io import BytesIO
+    plt.xlabel(x_axis)
+    plt.ylabel(y_axis)
+
+    figfile = BytesIO()
+    plt.savefig(figfile, format='png')
+    figfile.seek(0)  # rewind to beginning of file
+    import base64
+    figdata_png = base64.b64encode(figfile.getvalue())
+    return figdata_png
+
+
+def plot_heat(scatter_matrix):
+    sns.set()
+    plt.gcf().clear()
+    corr = scatter_matrix.corr()
+    with sns.axes_style(style='ticks'):
+        sns.heatmap(corr, annot=True, cmap='Blues')
+    from io import BytesIO
+    #plt.xlabel(x_axis)
+    #plt.ylabel(y_axis)
+    b, t = plt.ylim()
+    plt.ylim(b+0.5, t-0.5)
+    plt.title("Feature Correlation Heatmap")
+    figfile = BytesIO()
+    plt.savefig(figfile, format='png')
+    figfile.seek(0)  # rewind to beginning of file
+    import base64
+    figdata_png = base64.b64encode(figfile.getvalue())
+    return figdata_png
+
+
+def plot_pairwise(df):
+    sns.set()
+    plt.gcf().clear()
+    with sns.axes_style(style='ticks'):
+        sns.pairplot(df)
+    from io import BytesIO
+    plt.title("Feature Correlation Heatmap")
+    figfile = BytesIO()
+    plt.savefig(figfile, format='png')
+    figfile.seek(0)  # rewind to beginning of file
+    import base64
+    figdata_png = base64.b64encode(figfile.getvalue())
+    return figdata_png

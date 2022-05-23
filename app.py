@@ -6,11 +6,14 @@ import numpy as np
 #import discovery as algorithms
 import ploting as plotfun
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 from io import BytesIO
 from flask_bootstrap import Bootstrap
 from slamd import *
 from material_discovery import *
-
+import plotly.graph_objects as go
 
 
 
@@ -82,7 +85,6 @@ def dataset(description = None, head = None, dataset = None):
 
 
 
-    #,   #kfold = kfold, response = str(fig, 'utf-8'))
 
 @app.route('/datasets/<dataset>/preprocessing')
 def preprocessing(dataset = dataset):
@@ -142,36 +144,112 @@ def graphs(dataset = dataset):
 
 @app.route('/datasets/<dataset>/graphprocess/', methods=['POST'])
 def graph_process(dataset = dataset):
-    x_axis = request.form.get('x_axis')
-    y_axis = request.form.get('y_axis')
+    plot_name = request.form.get('plot_name')
+    x_ax = request.form.get('x_axis')
+    y_ax = request.form.get('y_axis')
     hue = request.form.get('hue')
-    size = request.form.getlist('size')
-    scatter = request.form.get('sc')
-    scatter_matrix = request.form.get('sm')
-    heatmap = request.form.get('hm')
+    size = request.form.get('size')
+    #scatter = request.form.get('sc') # only scatter
+    #scatter_matrix = request.form.getlist('sm')
+    #heatmap = request.form.getlist('hm')
     attribute_feature = request.form.getlist('attribute_feature')
+
     #scat = request.form.getlist('scatter2')
 
-    #print(histogram)
-    #if corrcat != '': corr += [corrcat]
     ds = loadDataset(dataset)
-    columns = loadColumns(dataset)
-    import ploting as plotfun
-    figs = {}
-    #if histogram != ['']:
-    #    figs['Histograms'] = str(plotfun.plot_histsmooth(ds, histogram), 'utf-8')
-    if scatter !=['']:
-        figs['Scatter'] = str(plotfun.plot_scatter(ds, x_axis, y_axis, hue, size), 'utf-8')
-
-    if corr != [''] and corr != []:
-        figs['Correlations'] = str(plotfun.plot_correlations(ds, corr, corrcat), 'utf-8')
-    if boxplotcat != '' and boxplotnum != '':
-        figs['Box Plot'] = str(plotfun.plot_boxplot(ds, boxplotcat, boxplotnum), 'utf-8')
-
-    if figs == {}: return redirect('/datasets/' + dataset + '/graphs')
-    return render_template('drawgraphs.html', figs = figs, dataset = dataset)
+    #----Scatter plot paramter -------------------------------
 
 
+    #----------------------------------------------------------------
+
+    #heatmap = ds[attribute_feature]
+
+
+    #columns = loadColumns(dataset)
+    attribute_f = ds[attribute_feature]
+    import json
+    import plotly
+    import plotly.express as px
+    import plotly.graph_objects as go
+
+    if plot_name == 'sc':
+        x_axis = ds[x_ax]
+        x_axis = x_axis.to_numpy()
+        x_axis = x_axis.flatten()
+
+        y_axis = ds[y_ax]
+        y_axis= y_axis.to_numpy()
+        y_axis = y_axis.flatten()
+
+        hue = ds[hue]
+        hue = hue.to_numpy()
+        hue = hue.flatten()
+
+        size = ds[size]
+        size = size.to_numpy()
+        size = size.flatten()
+        ds = ds.to_numpy()
+        ds = ds.flatten(order='C')
+        fig =  px.scatter(ds, x=x_axis, y=y_axis, color=hue, size=size, marginal_x="rug", marginal_y="box", title="Scatter plot with margin plots")
+        fig.update_layout(
+            dragmode='select',
+            width=1600,
+            height=1000,
+            hovermode='closest',
+        )
+        #graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+    elif plot_name == 'hm':
+        df = attribute_f.corr()
+        fig = px.imshow(df, aspect="auto")#x = df.columns, y = df.index, z = np.array(df))
+        #fig = fig.show()
+        #graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        fig.update_layout(
+            title='Correlation Heatmap',
+            dragmode='select',
+            width=1100,
+            height=1100,
+            hovermode='closest',
+
+        )
+
+    elif plot_name == 'sm':
+        print('att col', attribute_f.columns)
+        col = attribute_f.columns[0]
+        fig = px.scatter_matrix(attribute_f)
+        fig.update_layout(
+            title='Scatter Matrix',
+            dragmode='select',
+            width=2000,
+            height=2000,
+            hovermode='closest',
+
+        )
+
+
+
+
+
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return render_template('drawgraphs.html', graphJSON=graphJSON, fig=fig)
+
+
+"""
+@app.route('/datasets/<dataset>/graphprocess/', methods=['POST'])
+def heatmap_corr(dataset = dataset):
+    scatter_matrix = request.form.getlist('sm')
+    attribute_feature = request.form.getlist('attribute_feature')
+    ds = loadDataset(dataset)
+    smatrix = ds[attribute_feature]
+
+    if scatter_matrix != ['']:
+        df = ds.corr()
+        fig = go.Figure()
+        fig.add_trace(
+            go.Heatmap(x = df.columns,y = df.index,z = np.array(df))
+        )
+        fig = fig.show()
+    return render_template('drawgraphs.html', fig=fig)"""
 ################### SEQUENCIAL LEARNING ###############################3####
 
 @app.route('/datasets/<dataset>/sequential')
@@ -279,7 +357,9 @@ def sequential_process(dataset=dataset):
              sigma, dist, model, strategy, target_df, fixed_targets_idx, feature_df, min_or_max_target, check_to_use_threshold_t,
              target_selected_number1,target_selected_number2, min_or_max_fixedtarget, check_to_use_threshold_ft,
              fixedtarget_selected_number1, fixedtarget_selected_number2, tquantile)
+
     s.main()
+    #plt = s.start_sequential_learning()
     """
     if model == "Decision Trees (DT)":
         dt=DT(model,s,targets)
@@ -298,7 +378,7 @@ def sequential_process(dataset=dataset):
         print('Select a model')
     """
 
-    return render_template('sequential.html', s=s, dataset=dataset)
+    return render_template('sequential.html', s=s, dataset=dataset, plt=plt)
 
 ################### SEQUENCIAL LEARNING ###############################3####
 @app.route('/datasets/<dataset>/models')
@@ -346,19 +426,19 @@ def model_process(dataset = dataset):
     l = learn(dataframe, model, target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2, fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
     l.start_learning()
     n = l.start_learning()
-    m = n
+
     df_table = pd.DataFrame(n)
     df_column = df_table.columns
     #df_table2 = df_table1[1:]
     print(df_column)
     df_only_data = df_table
     print('new_df', df_only_data)
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    print('df column', df_only_data.columns)
 
 
-
-
-
-    return render_template('scores.html', dataset=dataset, m=m,df_column=df_column, df_only_data=df_only_data, n=n.to_html(index=False, classes='table table-striped table-hover table-responsive', escape=False))
+    return render_template('scores.html', dataset=dataset,df_column=df_column,  df_only_data=df_only_data, n=n.to_html(index=False, classes='table table-striped table-hover table-responsive', escape=False))
 
 ################### SEQUENCIAL LEARNING ###############################3####
 @app.route('/datasets/<dataset>/tutorial')

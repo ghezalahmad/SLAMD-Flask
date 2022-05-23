@@ -26,7 +26,7 @@
           left: 0;
           z-index: 100;
           padding: 90px 0 0;
-          box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+          box-shadow: inset -1px 0 0 rgba(0, 0, 0, .8);
           z-index: 99;
       }
 
@@ -50,7 +50,7 @@
       }
 
       .sidebar .nav-link {
-          color: #333;
+          color: ##333;
       }
 
       .sidebar .nav-link.active {
@@ -79,14 +79,14 @@
         SLAMD Dashboard
     </a>
     <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-
+  <!--
   <div class="col-12 col-md-4 col-lg-2">
         <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
   </div
-
+-->
   <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
     <div class="mr-3 mt-1">
       <a class="github-button" href="https://github.com/ghezalahmad/SLAMD-Flask" data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star /themesberg/simple-bootstrap-5-dashboard">Star</a>
@@ -96,7 +96,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <nav id="sidebar" class="col-md-1 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
@@ -124,12 +124,14 @@
                   <span class="ml-2">Design Space Explorer</span>
               </a>
             </li>
+            <!--
             <li class="nav-item">
               <a class="nav-link" href="/datasets/{{dataset}}/sequential">
                 <img src="https://img.icons8.com/external-icongeek26-outline-icongeek26/20/000000/external-connection-project-work-icongeek26-outline-icongeek26.png"/>
                   <span class="ml-2">Benchmarking</span>
               </a>
             </li>
+          -->
             <li class="nav-item">
               <a class="nav-link" href="/datasets/{{dataset}}/models">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>

@@ -2,6 +2,8 @@
 import app
 import pandas as pd
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.linear_model import LinearRegression,Lasso,Ridge
 from scipy.spatial import distance_matrix
@@ -73,7 +75,7 @@ class learn():
         self.target_df=pd.DataFrame(target_df_norm)
         self.dataframe=pd.DataFrame(dataframe_norm)
         self.fixed_target_df=pd.DataFrame(fixed_target_df_norm)
-        print(type(self.dataframe))
+        print(self.dataframe)
 
 
 
@@ -81,10 +83,12 @@ class learn():
         self.dataframe=self.decide_max_or_min(self.min_or_max_target,self.dataframe)
         self.dataframe=self.decide_max_or_min(self.min_or_max_fixedtarget,self.dataframe)
         self.fixed_target_selection_idxs=self.fixed_targets#confirm_fixed_target(fixed_target_selection_application)
-        self.fixed_target_df=self.dataframe[self.fixed_target_selection_idxs]
+        self.fixed_target_idxs=self.fixed_targets#confirm_fixed_target(fixed_target_selection_application)
+
+        #self.fixed_target_df=self.dataframe[self.fixed_target_selection_idxs]
         self.target_selection_idxs=self.targets#confirm_target(target_selection_application)
-        self.features_df = self.dataframe[self.features]#confirm_features(feature_selector_application)]
-        self.target_df=self.dataframe[self.targets]#confirm_target(target_selection_application)]
+        self.features_df = self.feature_df #confirm_features(feature_selector_application)]
+        #self.target_df=self.dataframe[self.targets]#confirm_target(target_selection_application)]
         #print('feature', self.features_df)
         self.decide_model(self.model)
         if self.strategy=='MEI (exploit)':
@@ -104,18 +108,15 @@ class learn():
         novelty_factor=min_distances*(max_of_min_distances**(-1))
 
         df= self.dataframe#.abs
-        #print('test df', df)
+
         df = df.iloc[self.PredIdx].assign(Utility=pd.Series(util).values)
         df = df.loc[self.PredIdx].assign(Novelty=pd.Series(novelty_factor).values)
-
+        print('test df', df, df.columns)
         if(self.Uncertainty.ndim>1):
             for i in range(len(self.targets)):
-                df[self.targets[i]] = self.Expected_Pred[:,i-1]
+                df[self.targets[i]] = self.Expected_Pred[:,i]
                 uncertainty_name_column='Uncertainty ('+self.targets[i]+' )'
                 df[uncertainty_name_column] = self.Uncertainty[:,i].tolist()
-                print("reassign targets", self.targets[i])
-                print("Expected Prediction,", self.Expected_Pred[:,i-1])
-
                 #df = df.loc[self.PredIdx].assign(Uncertainty=pd.Series(self.Uncertainty[:,i]).values)
                 #df=df.rename(columns={"Uncertainty":"Uncertainty  ("+self.targets[i]+")"})
         else:
@@ -126,7 +127,23 @@ class learn():
             #df=df.rename(columns={"Uncertainty":"Uncertainty  ("+self.targets+")"})
 
         show_df=df.sort_values(by='Utility', ascending=False)
-        #print(show_df)
+        target_list=show_df[self.targets]
+        print('showfxdf', show_df)
+        print('self.target', self.targets)
+        print('targetlist', target_list)
+        print('namenotinsided', show_df.columns)
+        if len(self.fixed_target_selection_idxs)>0:
+            target_list=pd.concat((target_list, show_df[self.fixed_target_idxs]), axis=1)
+        target_list=pd.concat((target_list, show_df['Utility']), axis=1)
+
+
+        print('targetlist', target_list)
+        g = sns.PairGrid(target_list, diag_sharey=False, corner=True, hue='Utility')
+        g.map_diag(sns.histplot,hue=None, color=".3")
+        g.map_lower(sns.scatterplot)
+        g.add_legend()
+        plt.savefig('static/img.png')
+
         return show_df
 
         #display(Markdown(show_df.to_markdown()))
@@ -145,6 +162,7 @@ class learn():
 
 
     def weight_Pred(self):
+
         target_weight = []
         for i in self.target_selected_number2:
             target_weight.append( self.target_selected_number2[i])
@@ -183,18 +201,32 @@ class learn():
     def updateIndexMLI(self):
 
         self.weight_Pred()
-        self.Uncertainty = self.Uncertainty/np.array(self.target_df.iloc[self.SampIdx].std())
+        Uncertainty_norm = self.Uncertainty/np.array(self.target_df.iloc[self.SampIdx].std())
         Expected_Pred_norm= (self.Expected_Pred-np.array(self.target_df.iloc[self.SampIdx].mean()))/np.array(self.target_df.iloc[self.SampIdx].std())
-        #self.scale_data()
+        target_weight = []
+        for i in self.target_selected_number2:
+            target_weight.append(self.target_selected_number2[i])
 
+
+        if(self.Expected_Pred.ndim>=2):
+
+            for weights in range(len(target_weight)):
+                Expected_Pred_norm[:,weights]=Expected_Pred_norm[:,weights]*target_weight[weights]
+                Uncertainty_norm[:,weights]=Uncertainty_norm[:,weights]*target_weight[weights]
+
+        else:
+
+            Expected_Pred_norm=Expected_Pred_norm*target_weight[0]
+            Uncertainty_norm=Uncertainty_norm*target_weight[0]
+        #self.scale_data()
         if(len(self.fixed_targets)>0):
             fixed_targets_in_prediction=self.weight_fixed_tars()
         else:
             fixed_targets_in_prediction=np.zeros(len(self.PredIdx))
         if(len(self.targets)>1):
-            util=fixed_targets_in_prediction.squeeze()+Expected_Pred_norm.sum(axis=1)+self.sigma*self.Uncertainty.sum(axis=1)
+            util=fixed_targets_in_prediction.squeeze()+Expected_Pred_norm.sum(axis=1)+self.sigma*Uncertainty_norm.sum(axis=1)
         else:
-            util=fixed_targets_in_prediction.squeeze()+Expected_Pred_norm.squeeze()+self.sigma*self.Uncertainty.squeeze()
+            util=fixed_targets_in_prediction.squeeze()+Expected_Pred_norm.squeeze()+self.sigma*Uncertainty_norm.squeeze()
         return util
 
 
@@ -203,8 +235,6 @@ class learn():
 
         td,tl=self.jk_resampling()
         self.y_pred_dtr=[]
-        print('td', td)
-        print('tl', tl)
         for i in range(len(td)):
             dtr = DecisionTreeRegressor()
             dtr.fit(td[i], tl[i])

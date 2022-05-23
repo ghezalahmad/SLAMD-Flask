@@ -27,6 +27,7 @@
 <!-- Display the data from text-area in table -->
 <div class="mt-4">
 
+
   <table id="proxies" class="display hover  compact cell-border table nowrap responsive" style="width: 100%">
     <thead>
       <tr>
@@ -48,6 +49,9 @@
 
 </div>
 
+<p>{{ img }}</p>
+
+  <img src={{url_for('static', filename='img.png')}}>
 <script type='text/javascript'>
   $('#proxies').DataTable();
 </script>

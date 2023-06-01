@@ -1,0 +1,1207 @@
+[
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 162.0 with a Liquid/Powder-Rate of 0.45, 14.4 kg Plasticiser and  1862.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "55.37"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.5, 14.4 kg Plasticiser and  1844.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "59.79"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.55, 14.4 kg Plasticiser and  1826.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "51.61"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 216.0 with a Liquid/Powder-Rate of 0.6, 14.4 kg Plasticiser and  1808.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "46.68"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 166.5 with a Liquid/Powder-Rate of 0.45, 14.8 kg Plasticiser and  1847.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "55.62"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 185.0 with a Liquid/Powder-Rate of 0.5, 14.8 kg Plasticiser and  1829.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "59.88"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 203.5 with a Liquid/Powder-Rate of 0.55, 14.8 kg Plasticiser and  1810.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "50.73"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 222.0 with a Liquid/Powder-Rate of 0.6, 14.8 kg Plasticiser and  1792.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "46.84"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 171.0 with a Liquid/Powder-Rate of 0.45, 15.2 kg Plasticiser and  1833.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "55.85"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 190.0 with a Liquid/Powder-Rate of 0.5, 15.2 kg Plasticiser and  1814.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "59.98"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 209.0 with a Liquid/Powder-Rate of 0.55, 15.2 kg Plasticiser and  1795.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "49.86"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 228.0 with a Liquid/Powder-Rate of 0.6, 15.2 kg Plasticiser and  1776.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "46.98"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 175.5 with a Liquid/Powder-Rate of 0.45, 15.6 kg Plasticiser and  1818.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "56.1"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 195.0 with a Liquid/Powder-Rate of 0.5, 15.6 kg Plasticiser and  1799.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "60.08"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 214.5 with a Liquid/Powder-Rate of 0.55, 15.6 kg Plasticiser and  1779.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "49.0"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 234.0 with a Liquid/Powder-Rate of 0.6, 15.6 kg Plasticiser and  1760.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.13"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.45, 16.0 kg Plasticiser and  1804.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "56.36"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 200.0 with a Liquid/Powder-Rate of 0.5, 16.0 kg Plasticiser and  1784.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "60.18"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.55, 16.0 kg Plasticiser and  1764.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "48.14"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 240.0 with a Liquid/Powder-Rate of 0.6, 16.0 kg Plasticiser and  1744.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.28"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 184.5 with a Liquid/Powder-Rate of 0.45, 16.4 kg Plasticiser and  1789.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "56.62"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 205.0 with a Liquid/Powder-Rate of 0.5, 16.4 kg Plasticiser and  1769.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "60.28"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 225.5 with a Liquid/Powder-Rate of 0.55, 16.4 kg Plasticiser and  1748.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.28"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 246.0 with a Liquid/Powder-Rate of 0.6, 16.4 kg Plasticiser and  1728.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.43"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 189.0 with a Liquid/Powder-Rate of 0.45, 16.8 kg Plasticiser and  1775.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "56.86"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 210.0 with a Liquid/Powder-Rate of 0.5, 16.8 kg Plasticiser and  1754.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "60.38"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 231.0 with a Liquid/Powder-Rate of 0.55, 16.8 kg Plasticiser and  1733.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "46.48"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 252.0 with a Liquid/Powder-Rate of 0.6, 16.8 kg Plasticiser and  1712.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.57"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 193.5 with a Liquid/Powder-Rate of 0.45, 17.2 kg Plasticiser and  1760.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "54.14"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 215.0 with a Liquid/Powder-Rate of 0.5, 17.2 kg Plasticiser and  1739.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "59.75"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 236.5 with a Liquid/Powder-Rate of 0.55, 17.2 kg Plasticiser and  1717.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.15"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 258.0 with a Liquid/Powder-Rate of 0.6, 17.2 kg Plasticiser and  1696.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.59"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.45, 17.6 kg Plasticiser and  1746.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "51.9"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.5, 17.6 kg Plasticiser and  1724.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "59.23"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 242.0 with a Liquid/Powder-Rate of 0.55, 17.6 kg Plasticiser and  1702.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.71"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 264.0 with a Liquid/Powder-Rate of 0.6, 17.6 kg Plasticiser and  1680.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.61"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 202.5 with a Liquid/Powder-Rate of 0.45, 18.0 kg Plasticiser and  1731.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "48.91"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 225.0 with a Liquid/Powder-Rate of 0.5, 18.0 kg Plasticiser and  1709.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "58.53"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 247.5 with a Liquid/Powder-Rate of 0.55, 18.0 kg Plasticiser and  1686.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "48.45"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 270.0 with a Liquid/Powder-Rate of 0.6, 18.0 kg Plasticiser and  1664.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5",
+        "compressive strength": "47.64"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 162.0 with a Liquid/Powder-Rate of 0.45, 14.4 kg Plasticiser and  1862.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 61.96",
+        "compressive strength": "61.96"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.5, 14.4 kg Plasticiser and  1844.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 65.26",
+        "compressive strength": "65.26"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.55, 14.4 kg Plasticiser and  1826.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 53.39",
+        "compressive strength": "53.39"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 216.0 with a Liquid/Powder-Rate of 0.6, 14.4 kg Plasticiser and  1808.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 52.4",
+        "compressive strength": "52.4"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 166.5 with a Liquid/Powder-Rate of 0.45, 14.8 kg Plasticiser and  1847.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 61.22",
+        "compressive strength": "61.22"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 185.0 with a Liquid/Powder-Rate of 0.5, 14.8 kg Plasticiser and  1829.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 65.09",
+        "compressive strength": "65.09"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 203.5 with a Liquid/Powder-Rate of 0.55, 14.8 kg Plasticiser and  1810.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 52.93",
+        "compressive strength": "52.93"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 222.0 with a Liquid/Powder-Rate of 0.6, 14.8 kg Plasticiser and  1792.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 51.9",
+        "compressive strength": "51.9"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 171.0 with a Liquid/Powder-Rate of 0.45, 15.2 kg Plasticiser and  1833.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 60.47",
+        "compressive strength": "60.47"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 190.0 with a Liquid/Powder-Rate of 0.5, 15.2 kg Plasticiser and  1814.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 64.93",
+        "compressive strength": "64.93"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 209.0 with a Liquid/Powder-Rate of 0.55, 15.2 kg Plasticiser and  1795.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 52.46",
+        "compressive strength": "52.46"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 228.0 with a Liquid/Powder-Rate of 0.6, 15.2 kg Plasticiser and  1776.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 51.4",
+        "compressive strength": "51.4"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 175.5 with a Liquid/Powder-Rate of 0.45, 15.6 kg Plasticiser and  1818.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 59.73",
+        "compressive strength": "59.73"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 195.0 with a Liquid/Powder-Rate of 0.5, 15.6 kg Plasticiser and  1799.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 64.76",
+        "compressive strength": "64.76"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 214.5 with a Liquid/Powder-Rate of 0.55, 15.6 kg Plasticiser and  1779.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 52.0",
+        "compressive strength": "52.0"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 234.0 with a Liquid/Powder-Rate of 0.6, 15.6 kg Plasticiser and  1760.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 50.9",
+        "compressive strength": "50.9"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.45, 16.0 kg Plasticiser and  1804.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 58.98",
+        "compressive strength": "58.98"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 200.0 with a Liquid/Powder-Rate of 0.5, 16.0 kg Plasticiser and  1784.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 64.6",
+        "compressive strength": "64.6"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.55, 16.0 kg Plasticiser and  1764.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 51.54",
+        "compressive strength": "51.54"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 240.0 with a Liquid/Powder-Rate of 0.6, 16.0 kg Plasticiser and  1744.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 50.41",
+        "compressive strength": "50.41"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 184.5 with a Liquid/Powder-Rate of 0.45, 16.4 kg Plasticiser and  1789.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 58.24",
+        "compressive strength": "58.24"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 205.0 with a Liquid/Powder-Rate of 0.5, 16.4 kg Plasticiser and  1769.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 64.43",
+        "compressive strength": "64.43"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 225.5 with a Liquid/Powder-Rate of 0.55, 16.4 kg Plasticiser and  1748.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 51.07",
+        "compressive strength": "51.07"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 246.0 with a Liquid/Powder-Rate of 0.6, 16.4 kg Plasticiser and  1728.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 49.91",
+        "compressive strength": "49.91"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 189.0 with a Liquid/Powder-Rate of 0.45, 16.8 kg Plasticiser and  1775.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 57.54",
+        "compressive strength": "57.54"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 210.0 with a Liquid/Powder-Rate of 0.5, 16.8 kg Plasticiser and  1754.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 64.28",
+        "compressive strength": "64.28"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 231.0 with a Liquid/Powder-Rate of 0.55, 16.8 kg Plasticiser and  1733.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 50.64",
+        "compressive strength": "50.64"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 252.0 with a Liquid/Powder-Rate of 0.6, 16.8 kg Plasticiser and  1712.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 49.44",
+        "compressive strength": "49.44"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 193.5 with a Liquid/Powder-Rate of 0.45, 17.2 kg Plasticiser and  1760.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 56.66",
+        "compressive strength": "56.66"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 215.0 with a Liquid/Powder-Rate of 0.5, 17.2 kg Plasticiser and  1739.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 63.47",
+        "compressive strength": "63.47"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 236.5 with a Liquid/Powder-Rate of 0.55, 17.2 kg Plasticiser and  1717.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 51.92",
+        "compressive strength": "51.92"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 258.0 with a Liquid/Powder-Rate of 0.6, 17.2 kg Plasticiser and  1696.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 50.93",
+        "compressive strength": "50.93"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.45, 17.6 kg Plasticiser and  1746.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 55.78",
+        "compressive strength": "55.78"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.5, 17.6 kg Plasticiser and  1724.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 62.65",
+        "compressive strength": "62.65"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 242.0 with a Liquid/Powder-Rate of 0.55, 17.6 kg Plasticiser and  1702.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 53.2",
+        "compressive strength": "53.2"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 264.0 with a Liquid/Powder-Rate of 0.6, 17.6 kg Plasticiser and  1680.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 52.42",
+        "compressive strength": "52.42"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 202.5 with a Liquid/Powder-Rate of 0.45, 18.0 kg Plasticiser and  1731.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 54.97",
+        "compressive strength": "54.97"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 225.0 with a Liquid/Powder-Rate of 0.5, 18.0 kg Plasticiser and  1709.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 61.9",
+        "compressive strength": "61.9"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 247.5 with a Liquid/Powder-Rate of 0.55, 18.0 kg Plasticiser and  1686.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 54.38",
+        "compressive strength": "54.38"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 270.0 with a Liquid/Powder-Rate of 0.6, 18.0 kg Plasticiser and  1664.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.5/0.5, Heat curing ()\" ; completion: 53.79",
+        "compressive strength": "53.79"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 162.0 with a Liquid/Powder-Rate of 0.45, 14.4 kg Plasticiser and  1862.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "43.32"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.5, 14.4 kg Plasticiser and  1844.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "47.92"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.55, 14.4 kg Plasticiser and  1826.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.87"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 216.0 with a Liquid/Powder-Rate of 0.6, 14.4 kg Plasticiser and  1808.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "43.38"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 166.5 with a Liquid/Powder-Rate of 0.45, 14.8 kg Plasticiser and  1847.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "42.95"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 185.0 with a Liquid/Powder-Rate of 0.5, 14.8 kg Plasticiser and  1829.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "48.47"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 203.5 with a Liquid/Powder-Rate of 0.55, 14.8 kg Plasticiser and  1810.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.49"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 222.0 with a Liquid/Powder-Rate of 0.6, 14.8 kg Plasticiser and  1792.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.2"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 171.0 with a Liquid/Powder-Rate of 0.45, 15.2 kg Plasticiser and  1833.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "43.58"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 190.0 with a Liquid/Powder-Rate of 0.5, 15.2 kg Plasticiser and  1814.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "47.91"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 209.0 with a Liquid/Powder-Rate of 0.55, 15.2 kg Plasticiser and  1795.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.12"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 228.0 with a Liquid/Powder-Rate of 0.6, 15.2 kg Plasticiser and  1776.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.27"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 175.5 with a Liquid/Powder-Rate of 0.45, 15.6 kg Plasticiser and  1818.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "44.21"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 195.0 with a Liquid/Powder-Rate of 0.5, 15.6 kg Plasticiser and  1799.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "48.75"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 214.5 with a Liquid/Powder-Rate of 0.55, 15.6 kg Plasticiser and  1779.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "45.75"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 234.0 with a Liquid/Powder-Rate of 0.6, 15.6 kg Plasticiser and  1760.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.35"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.45, 16.0 kg Plasticiser and  1804.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "44.85"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 200.0 with a Liquid/Powder-Rate of 0.5, 16.0 kg Plasticiser and  1784.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "49.59"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.55, 16.0 kg Plasticiser and  1764.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "45.38"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 240.0 with a Liquid/Powder-Rate of 0.6, 16.0 kg Plasticiser and  1744.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.42"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 184.5 with a Liquid/Powder-Rate of 0.45, 16.4 kg Plasticiser and  1789.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "45.48"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 205.0 with a Liquid/Powder-Rate of 0.5, 16.4 kg Plasticiser and  1769.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "50.43"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 225.5 with a Liquid/Powder-Rate of 0.55, 16.4 kg Plasticiser and  1748.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "45.02"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 246.0 with a Liquid/Powder-Rate of 0.6, 16.4 kg Plasticiser and  1728.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.5"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 189.0 with a Liquid/Powder-Rate of 0.45, 16.8 kg Plasticiser and  1775.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.08"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 210.0 with a Liquid/Powder-Rate of 0.5, 16.8 kg Plasticiser and  1754.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "51.22"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 231.0 with a Liquid/Powder-Rate of 0.55, 16.8 kg Plasticiser and  1733.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "44.67"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 252.0 with a Liquid/Powder-Rate of 0.6, 16.8 kg Plasticiser and  1712.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.57"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 193.5 with a Liquid/Powder-Rate of 0.45, 17.2 kg Plasticiser and  1760.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.01"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 215.0 with a Liquid/Powder-Rate of 0.5, 17.2 kg Plasticiser and  1739.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "51.04"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 236.5 with a Liquid/Powder-Rate of 0.55, 17.2 kg Plasticiser and  1717.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "43.71"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 258.0 with a Liquid/Powder-Rate of 0.6, 17.2 kg Plasticiser and  1696.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.27"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.45, 17.6 kg Plasticiser and  1746.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "45.96"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.5, 17.6 kg Plasticiser and  1724.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "50.89"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 242.0 with a Liquid/Powder-Rate of 0.55, 17.6 kg Plasticiser and  1702.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "42.91"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 264.0 with a Liquid/Powder-Rate of 0.6, 17.6 kg Plasticiser and  1680.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "46.01"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 202.5 with a Liquid/Powder-Rate of 0.45, 18.0 kg Plasticiser and  1731.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "45.88"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 225.0 with a Liquid/Powder-Rate of 0.5, 18.0 kg Plasticiser and  1709.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "50.69"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 247.5 with a Liquid/Powder-Rate of 0.55, 18.0 kg Plasticiser and  1686.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "41.85"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 270.0 with a Liquid/Powder-Rate of 0.6, 18.0 kg Plasticiser and  1664.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4",
+        "compressive strength": "45.68"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 162.0 with a Liquid/Powder-Rate of 0.45, 14.4 kg Plasticiser and  1862.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 55.57",
+        "compressive strength": "55.57"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.5, 14.4 kg Plasticiser and  1844.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 57.37",
+        "compressive strength": "57.37"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.55, 14.4 kg Plasticiser and  1826.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 53.39",
+        "compressive strength": "53.39"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 216.0 with a Liquid/Powder-Rate of 0.6, 14.4 kg Plasticiser and  1808.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 51.22",
+        "compressive strength": "51.22"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 166.5 with a Liquid/Powder-Rate of 0.45, 14.8 kg Plasticiser and  1847.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 56.11",
+        "compressive strength": "56.11"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 185.0 with a Liquid/Powder-Rate of 0.5, 14.8 kg Plasticiser and  1829.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 58.2",
+        "compressive strength": "58.2"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 203.5 with a Liquid/Powder-Rate of 0.55, 14.8 kg Plasticiser and  1810.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 54.32",
+        "compressive strength": "54.32"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 222.0 with a Liquid/Powder-Rate of 0.6, 14.8 kg Plasticiser and  1792.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 52.13",
+        "compressive strength": "52.13"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 171.0 with a Liquid/Powder-Rate of 0.45, 15.2 kg Plasticiser and  1833.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 56.66",
+        "compressive strength": "56.66"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 190.0 with a Liquid/Powder-Rate of 0.5, 15.2 kg Plasticiser and  1814.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 59.03",
+        "compressive strength": "59.03"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 209.0 with a Liquid/Powder-Rate of 0.55, 15.2 kg Plasticiser and  1795.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 55.26",
+        "compressive strength": "55.26"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 228.0 with a Liquid/Powder-Rate of 0.6, 15.2 kg Plasticiser and  1776.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 53.05",
+        "compressive strength": "53.05"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 175.5 with a Liquid/Powder-Rate of 0.45, 15.6 kg Plasticiser and  1818.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 57.2",
+        "compressive strength": "57.2"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 195.0 with a Liquid/Powder-Rate of 0.5, 15.6 kg Plasticiser and  1799.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 59.86",
+        "compressive strength": "59.86"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 214.5 with a Liquid/Powder-Rate of 0.55, 15.6 kg Plasticiser and  1779.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 56.19",
+        "compressive strength": "56.19"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 234.0 with a Liquid/Powder-Rate of 0.6, 15.6 kg Plasticiser and  1760.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 53.96",
+        "compressive strength": "53.96"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.45, 16.0 kg Plasticiser and  1804.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 57.75",
+        "compressive strength": "57.75"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 200.0 with a Liquid/Powder-Rate of 0.5, 16.0 kg Plasticiser and  1784.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 60.68",
+        "compressive strength": "60.68"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.55, 16.0 kg Plasticiser and  1764.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 57.12",
+        "compressive strength": "57.12"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 240.0 with a Liquid/Powder-Rate of 0.6, 16.0 kg Plasticiser and  1744.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 54.87",
+        "compressive strength": "54.87"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 184.5 with a Liquid/Powder-Rate of 0.45, 16.4 kg Plasticiser and  1789.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 58.29",
+        "compressive strength": "58.29"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 205.0 with a Liquid/Powder-Rate of 0.5, 16.4 kg Plasticiser and  1769.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 61.51",
+        "compressive strength": "61.51"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 225.5 with a Liquid/Powder-Rate of 0.55, 16.4 kg Plasticiser and  1748.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 58.06",
+        "compressive strength": "58.06"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 246.0 with a Liquid/Powder-Rate of 0.6, 16.4 kg Plasticiser and  1728.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 55.78",
+        "compressive strength": "55.78"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 189.0 with a Liquid/Powder-Rate of 0.45, 16.8 kg Plasticiser and  1775.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 58.8",
+        "compressive strength": "58.8"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 210.0 with a Liquid/Powder-Rate of 0.5, 16.8 kg Plasticiser and  1754.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 62.29",
+        "compressive strength": "62.29"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 231.0 with a Liquid/Powder-Rate of 0.55, 16.8 kg Plasticiser and  1733.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 58.93",
+        "compressive strength": "58.93"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 252.0 with a Liquid/Powder-Rate of 0.6, 16.8 kg Plasticiser and  1712.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 56.64",
+        "compressive strength": "56.64"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 193.5 with a Liquid/Powder-Rate of 0.45, 17.2 kg Plasticiser and  1760.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 58.03",
+        "compressive strength": "58.03"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 215.0 with a Liquid/Powder-Rate of 0.5, 17.2 kg Plasticiser and  1739.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 61.95",
+        "compressive strength": "61.95"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 236.5 with a Liquid/Powder-Rate of 0.55, 17.2 kg Plasticiser and  1717.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 57.37",
+        "compressive strength": "57.37"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 258.0 with a Liquid/Powder-Rate of 0.6, 17.2 kg Plasticiser and  1696.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 54.31",
+        "compressive strength": "54.31"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.45, 17.6 kg Plasticiser and  1746.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 57.27",
+        "compressive strength": "57.27"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.5, 17.6 kg Plasticiser and  1724.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 61.61",
+        "compressive strength": "61.61"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 242.0 with a Liquid/Powder-Rate of 0.55, 17.6 kg Plasticiser and  1702.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 55.82",
+        "compressive strength": "55.82"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 264.0 with a Liquid/Powder-Rate of 0.6, 17.6 kg Plasticiser and  1680.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 51.98",
+        "compressive strength": "51.98"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 202.5 with a Liquid/Powder-Rate of 0.45, 18.0 kg Plasticiser and  1731.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 56.56",
+        "compressive strength": "56.56"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 225.0 with a Liquid/Powder-Rate of 0.5, 18.0 kg Plasticiser and  1709.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 61.3",
+        "compressive strength": "61.3"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 247.5 with a Liquid/Powder-Rate of 0.55, 18.0 kg Plasticiser and  1686.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 54.38",
+        "compressive strength": "54.38"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 270.0 with a Liquid/Powder-Rate of 0.6, 18.0 kg Plasticiser and  1664.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.6/0.4, Heat curing ()\" ; completion: 49.83",
+        "compressive strength": "49.83"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 162.0 with a Liquid/Powder-Rate of 0.45, 14.4 kg Plasticiser and  1862.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "33.83"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.5, 14.4 kg Plasticiser and  1844.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "36.19"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.55, 14.4 kg Plasticiser and  1826.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "31.11"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 216.0 with a Liquid/Powder-Rate of 0.6, 14.4 kg Plasticiser and  1808.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.71"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 166.5 with a Liquid/Powder-Rate of 0.45, 14.8 kg Plasticiser and  1847.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "34.31"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 185.0 with a Liquid/Powder-Rate of 0.5, 14.8 kg Plasticiser and  1829.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "36.52"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 203.5 with a Liquid/Powder-Rate of 0.55, 14.8 kg Plasticiser and  1810.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "30.27"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 222.0 with a Liquid/Powder-Rate of 0.6, 14.8 kg Plasticiser and  1792.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.6"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 171.0 with a Liquid/Powder-Rate of 0.45, 15.2 kg Plasticiser and  1833.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "34.79"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 190.0 with a Liquid/Powder-Rate of 0.5, 15.2 kg Plasticiser and  1814.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "36.85"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 209.0 with a Liquid/Powder-Rate of 0.55, 15.2 kg Plasticiser and  1795.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "29.43"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 228.0 with a Liquid/Powder-Rate of 0.6, 15.2 kg Plasticiser and  1776.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.5"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 175.5 with a Liquid/Powder-Rate of 0.45, 15.6 kg Plasticiser and  1818.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "38.27"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 195.0 with a Liquid/Powder-Rate of 0.5, 15.6 kg Plasticiser and  1799.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "37.18"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 214.5 with a Liquid/Powder-Rate of 0.55, 15.6 kg Plasticiser and  1779.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "28.6"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 234.0 with a Liquid/Powder-Rate of 0.6, 15.6 kg Plasticiser and  1760.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.4"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.45, 16.0 kg Plasticiser and  1804.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "35.76"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 200.0 with a Liquid/Powder-Rate of 0.5, 16.0 kg Plasticiser and  1784.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "37.52"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.55, 16.0 kg Plasticiser and  1764.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "27.77"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 240.0 with a Liquid/Powder-Rate of 0.6, 16.0 kg Plasticiser and  1744.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.3"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 184.5 with a Liquid/Powder-Rate of 0.45, 16.4 kg Plasticiser and  1789.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "36.24"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 205.0 with a Liquid/Powder-Rate of 0.5, 16.4 kg Plasticiser and  1769.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "37.85"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 225.5 with a Liquid/Powder-Rate of 0.55, 16.4 kg Plasticiser and  1748.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "26.95"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 246.0 with a Liquid/Powder-Rate of 0.6, 16.4 kg Plasticiser and  1728.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.2"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 189.0 with a Liquid/Powder-Rate of 0.45, 16.8 kg Plasticiser and  1775.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "36.69"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 210.0 with a Liquid/Powder-Rate of 0.5, 16.8 kg Plasticiser and  1754.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "38.16"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 231.0 with a Liquid/Powder-Rate of 0.55, 16.8 kg Plasticiser and  1733.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "26.17"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 252.0 with a Liquid/Powder-Rate of 0.6, 16.8 kg Plasticiser and  1712.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.11"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 193.5 with a Liquid/Powder-Rate of 0.45, 17.2 kg Plasticiser and  1760.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "35.7"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 215.0 with a Liquid/Powder-Rate of 0.5, 17.2 kg Plasticiser and  1739.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "38.43"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 236.5 with a Liquid/Powder-Rate of 0.55, 17.2 kg Plasticiser and  1717.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "26.01"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 258.0 with a Liquid/Powder-Rate of 0.6, 17.2 kg Plasticiser and  1696.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "23.62"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.45, 17.6 kg Plasticiser and  1746.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "34.86"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.5, 17.6 kg Plasticiser and  1724.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "38.66"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 242.0 with a Liquid/Powder-Rate of 0.55, 17.6 kg Plasticiser and  1702.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.88"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 264.0 with a Liquid/Powder-Rate of 0.6, 17.6 kg Plasticiser and  1680.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "22.4"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 202.5 with a Liquid/Powder-Rate of 0.45, 18.0 kg Plasticiser and  1731.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "33.81"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 225.0 with a Liquid/Powder-Rate of 0.5, 18.0 kg Plasticiser and  1709.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "38.96"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 247.5 with a Liquid/Powder-Rate of 0.55, 18.0 kg Plasticiser and  1686.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "25.71"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 270.0 with a Liquid/Powder-Rate of 0.6, 18.0 kg Plasticiser and  1664.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3",
+        "compressive strength": "20.76"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 162.0 with a Liquid/Powder-Rate of 0.45, 14.4 kg Plasticiser and  1862.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 41.53",
+        "compressive strength": "41.53"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.5, 14.4 kg Plasticiser and  1844.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 42.56",
+        "compressive strength": "42.56"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.55, 14.4 kg Plasticiser and  1826.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 33.94",
+        "compressive strength": "33.94"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 360,  Liquid Weight: 216.0 with a Liquid/Powder-Rate of 0.6, 14.4 kg Plasticiser and  1808.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 25.58",
+        "compressive strength": "25.58"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 166.5 with a Liquid/Powder-Rate of 0.45, 14.8 kg Plasticiser and  1847.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 41.34",
+        "compressive strength": "41.34"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 185.0 with a Liquid/Powder-Rate of 0.5, 14.8 kg Plasticiser and  1829.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 42.72",
+        "compressive strength": "42.72"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 203.5 with a Liquid/Powder-Rate of 0.55, 14.8 kg Plasticiser and  1810.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 33.49",
+        "compressive strength": "33.49"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 370,  Liquid Weight: 222.0 with a Liquid/Powder-Rate of 0.6, 14.8 kg Plasticiser and  1792.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 28.3",
+        "compressive strength": "28.3"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 171.0 with a Liquid/Powder-Rate of 0.45, 15.2 kg Plasticiser and  1833.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 41.15",
+        "compressive strength": "41.15"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 190.0 with a Liquid/Powder-Rate of 0.5, 15.2 kg Plasticiser and  1814.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 42.88",
+        "compressive strength": "42.88"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 209.0 with a Liquid/Powder-Rate of 0.55, 15.2 kg Plasticiser and  1795.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 33.03",
+        "compressive strength": "33.03"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 380,  Liquid Weight: 228.0 with a Liquid/Powder-Rate of 0.6, 15.2 kg Plasticiser and  1776.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 28.01",
+        "compressive strength": "28.01"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 175.5 with a Liquid/Powder-Rate of 0.45, 15.6 kg Plasticiser and  1818.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 40.96",
+        "compressive strength": "40.96"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 195.0 with a Liquid/Powder-Rate of 0.5, 15.6 kg Plasticiser and  1799.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 43.03",
+        "compressive strength": "43.03"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 214.5 with a Liquid/Powder-Rate of 0.55, 15.6 kg Plasticiser and  1779.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 32.58",
+        "compressive strength": "32.58"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 390,  Liquid Weight: 234.0 with a Liquid/Powder-Rate of 0.6, 15.6 kg Plasticiser and  1760.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 27.73",
+        "compressive strength": "27.73"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 180.0 with a Liquid/Powder-Rate of 0.45, 16.0 kg Plasticiser and  1804.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 40.78",
+        "compressive strength": "40.78"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 200.0 with a Liquid/Powder-Rate of 0.5, 16.0 kg Plasticiser and  1784.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 43.19",
+        "compressive strength": "43.19"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.55, 16.0 kg Plasticiser and  1764.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 32.12",
+        "compressive strength": "32.12"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 400,  Liquid Weight: 240.0 with a Liquid/Powder-Rate of 0.6, 16.0 kg Plasticiser and  1744.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 27.44",
+        "compressive strength": "27.44"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 184.5 with a Liquid/Powder-Rate of 0.45, 16.4 kg Plasticiser and  1789.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 40.59",
+        "compressive strength": "40.59"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 205.0 with a Liquid/Powder-Rate of 0.5, 16.4 kg Plasticiser and  1769.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 43.35",
+        "compressive strength": "43.35"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 225.5 with a Liquid/Powder-Rate of 0.55, 16.4 kg Plasticiser and  1748.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 31.67",
+        "compressive strength": "31.67"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 410,  Liquid Weight: 246.0 with a Liquid/Powder-Rate of 0.6, 16.4 kg Plasticiser and  1728.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 27.16",
+        "compressive strength": "27.16"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 189.0 with a Liquid/Powder-Rate of 0.45, 16.8 kg Plasticiser and  1775.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 40.41",
+        "compressive strength": "40.41"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 210.0 with a Liquid/Powder-Rate of 0.5, 16.8 kg Plasticiser and  1754.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 43.5",
+        "compressive strength": "43.5"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 231.0 with a Liquid/Powder-Rate of 0.55, 16.8 kg Plasticiser and  1733.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 31.24",
+        "compressive strength": "31.24"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 420,  Liquid Weight: 252.0 with a Liquid/Powder-Rate of 0.6, 16.8 kg Plasticiser and  1712.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 26.89",
+        "compressive strength": "26.89"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 193.5 with a Liquid/Powder-Rate of 0.45, 17.2 kg Plasticiser and  1760.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 39.8",
+        "compressive strength": "39.8"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 215.0 with a Liquid/Powder-Rate of 0.5, 17.2 kg Plasticiser and  1739.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 43.84",
+        "compressive strength": "43.84"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 236.5 with a Liquid/Powder-Rate of 0.55, 17.2 kg Plasticiser and  1717.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 32.59",
+        "compressive strength": "32.59"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 430,  Liquid Weight: 258.0 with a Liquid/Powder-Rate of 0.6, 17.2 kg Plasticiser and  1696.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 27.77",
+        "compressive strength": "27.77"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 198.0 with a Liquid/Powder-Rate of 0.45, 17.6 kg Plasticiser and  1746.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 39.19",
+        "compressive strength": "39.19"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 220.0 with a Liquid/Powder-Rate of 0.5, 17.6 kg Plasticiser and  1724.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 44.18",
+        "compressive strength": "44.18"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 242.0 with a Liquid/Powder-Rate of 0.55, 17.6 kg Plasticiser and  1702.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 33.95",
+        "compressive strength": "33.95"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 440,  Liquid Weight: 264.0 with a Liquid/Powder-Rate of 0.6, 17.6 kg Plasticiser and  1680.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 28.65",
+        "compressive strength": "28.65"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 202.5 with a Liquid/Powder-Rate of 0.45, 18.0 kg Plasticiser and  1731.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 38.63",
+        "compressive strength": "38.63"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 225.0 with a Liquid/Powder-Rate of 0.5, 18.0 kg Plasticiser and  1709.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 44.49",
+        "compressive strength": "44.49"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 247.5 with a Liquid/Powder-Rate of 0.55, 18.0 kg Plasticiser and  1686.5 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 35.2",
+        "compressive strength": "35.2"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "The concrete consists of Powder weight: 450,  Liquid Weight: 270.0 with a Liquid/Powder-Rate of 0.6, 18.0 kg Plasticiser and  1664.0 Aggregates. The powder constituents are Fly Ash/GGBFS-Ratio: 0.7/0.3, Heat curing ()\" ; completion: 29.46",
+        "compressive strength": "29.46"
+    },
+    {
+        "instruction": "Here are 'formulation', and 'compressive strength' example pairs; Remember: You can only answer with the predicted strength as a number!",
+        "formulation": "",
+        "compressive strength": ""
+    }
+]
